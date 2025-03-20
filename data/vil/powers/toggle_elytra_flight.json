@@ -1,0 +1,36 @@
+{
+    "type": "origins:multiple",
+    "name": "Toggleable Glide Flight",
+    "description": "You can toggle a state in which you will not be able to use your second mode of flight, gliding, in order to allow for smooth gameplay.",
+
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "id": "key.origins.secondary_active"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vil:flight/flight_resources_resource",
+            "comparison": ">=",
+            "compare_to": 3600
+        }
+    },
+
+    "prevent_elytra_flight": {
+        "type": "origins:prevent_elytra_flight",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:power_active",
+                "power": "*:*_toggle"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 3600
+            }]
+        }
+    }
+}
