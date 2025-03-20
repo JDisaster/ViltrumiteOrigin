@@ -11,7 +11,9 @@
 		"vil:continuous_regen",
 		"vil:no_gear",
 		"vil:sound_weakness",
-		"vil:toggle_item_pickup"
+		"vil:toggle_elytra_flight",
+		"vil:toggle_item_pickup",
+		"vil:test"
 	],
 	"icon": {
 		"id":"minecraft:iron_sword"

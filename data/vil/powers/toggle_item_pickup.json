@@ -1,18 +1,35 @@
 {
     "type": "origins:multiple",
     "name": "Prevent Item Pickup",
-    "description": "You can toggle a state in which you will not pick up items in order to allow for smooth gameplay when using your fist as your main weapon.",
+    "description": "You can toggle a state in which you will not pick up items in order to allow for smooth gameplay when using your fist as your main weapon. Sneak and use the bind to toggle.",
 
     "toggle": {
         "type": "origins:toggle",
         "active_by_default": false,
         "key": {
             "id": "key.origins.secondary_active"
+        },
+        "condition": {
+            "type": "origins:sneaking"
         }
     },
 
     "prevent_item_pickup": {
         "type": "origins:prevent_item_pickup",
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        }
+    },
+
+    "notify_toggle_changes": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+
+        },
+        "falling_action": {
+
+        },
         "condition": {
             "type": "origins:power_active",
             "power": "*:*_toggle"

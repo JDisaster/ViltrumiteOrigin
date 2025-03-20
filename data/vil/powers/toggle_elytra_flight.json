@@ -10,10 +10,17 @@
             "id": "key.origins.secondary_active"
         },
         "condition": {
-            "type": "origins:resource",
-            "resource": "vil:flight/flight_resources_resource",
-            "comparison": ">=",
-            "compare_to": 3600
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 3600
+            },
+            {
+                "type": "origins:sneaking",
+                "inverted": true
+            }]
         }
     },
 
@@ -31,6 +38,20 @@
                 "comparison": ">=",
                 "compare_to": 3600
             }]
+        }
+    },
+
+    "notify_toggle_changes": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+
+        },
+        "falling_action": {
+
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
         }
     }
 }
