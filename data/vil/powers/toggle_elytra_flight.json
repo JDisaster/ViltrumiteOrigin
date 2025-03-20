@@ -44,10 +44,13 @@
     "notify_toggle_changes": {
         "type": "origins:action_over_time",
         "rising_action": {
-
+            "type": "origins:execute_command",
+            "command": "function toggles/toggleon_elytra",
+            "permission_level": 4
         },
         "falling_action": {
-
+            "type": "origins:execute_command",
+            "commandd": "function toggles/toggleoff_elytra"
         },
         "condition": {
             "type": "origins:power_active",
