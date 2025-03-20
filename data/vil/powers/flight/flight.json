@@ -1,0 +1,728 @@
+{
+    "type": "origins:multiple",
+    "name": "Flight",
+    "description": "Viltrumites possess the ability to fly by creating their own leverage.",
+    
+    "creative_flight": {
+        "type": "origins:creative_flight",
+        "condition": {
+            "type": "origins:block_in_radius",
+            "shape": "sphere",
+            "radius": 20,
+            "block_condition": {
+                "type": "origins:and",
+                "conditions": [{
+                    "type": "origins:block",
+                    "block": "minecraft:sculk_shrieker"
+                },
+                {
+                    "type": "origins:block_state",
+                    "property": "shrieking",
+                    "value": true
+                },
+                {
+                    "type": "origins:block_state",
+                    "property": "waterlogged",
+                    "value": false
+                }]
+            },
+            "inverted": true
+        }
+    },
+
+    "fall_flight": {
+        "type": "origins:elytra_flight",
+        "render_elytra": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vil:flight/flight_resources_resource",
+            "comparison": ">=",
+            "compare_to": 3600
+        }
+    },
+
+    "boosted_fall_flight": {
+        "type": "origins:action_on_key_press",
+        "key": {
+            "id": "key.sprint",
+            "continuous": true
+        },
+        "cooldown": 1,
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.035,
+            "space": "local"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:fall_flying"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 3600
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": "<",
+                "compare_to": 7200
+            }]
+        }
+    },
+
+    "boosted_fall_flight_initial": {
+        "type": "origins:action_on_key_press",
+        "key": {
+            "id": "key.sprint"
+        },
+        "cooldown": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:add_velocity",
+                "z": 0.8,
+                "space": "local"
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "entity.ender_dragon.shoot",
+                "volume": 5,
+                "pitch": 2
+            }]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:fall_flying"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 3600
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": "<",
+                "compare_to": 7200
+            }]
+        }
+    },
+
+    "super_boosted_fall_flight": {
+        "type": "origins:action_on_key_press",
+        "key": {
+            "id": "key.sprint",
+            "continuous": true
+        },
+        "cooldown": 1,
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1,
+            "space": "local"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:fall_flying"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 7200
+            }]
+        }
+    },
+
+    "super_boosted_fall_flight_initial": {
+        "type": "origins:action_on_key_press",
+        "key": {
+            "id": "key.sprint"
+        },
+        "cooldown": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:add_velocity",
+                "z": 2,
+                "space": "local"
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "entity.generic.explode",
+                "volume": 5,
+                "pitch": 2
+            }]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:fall_flying"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 7200
+            }]
+        }
+    },
+
+    "kinetic_burst1": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 12
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 5000
+            }]
+        }
+    },
+
+    "kinetic_burst2": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 10
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 10000
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 5000
+            }]
+        }
+    },
+
+    "kinetic_burst3": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 8
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 15000
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 10000
+            }]
+        }
+    },
+
+    "kinetic_burst4": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 7
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 20000
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 15000
+            }]
+        }
+    },
+
+    "kinetic_burst5": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 6
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 25000
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 20000
+            }]
+        }
+    },
+
+    "kinetic_burst6": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 5
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 30000
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 25000
+            }]
+        }
+    },
+
+    "kinetic_burst7": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 4
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 35000
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 30000
+            }]
+        }
+    },
+
+    "kinetic_burst8": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 3
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 42500
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 35000
+            }]
+        }
+    },
+
+    "kinetic_burst9": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 2.5
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": "<",
+                "compare_to": 50000
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 42500
+            }]
+        }
+    },
+
+    "kinetic_burst10": {
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 20,
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 2
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall.player"
+                }]
+            }]
+        },
+        "entity_action": {
+            "type": "origins:explode",
+            "power": 3,
+            "destruction_type": "destroy",
+            "damage_self": false,
+            "create_fire": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageTaken",
+                "comparison": ">=",
+                "compare_to": 50000
+            }]
+        }
+    },
+
+    "notify_basic_fall_flight": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:flight/flight_lvl_2",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vil:flight/flight_resources_resource",
+            "comparison": ">=",
+            "compare_to": 3600
+        }
+    },
+
+    "notify_super_fall_flight": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:flight/flight_lvl_3",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vil:flight/flight_resources_resource",
+            "comparison": ">=",
+            "compare_to": 7200
+        }
+    },
+
+    "notify_kinetic_burst": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:flight/flight_lvl_max",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vil:flight/flight_resources_resource",
+            "comparison": ">=",
+            "compare_to": 10800
+        }
+    }
+}

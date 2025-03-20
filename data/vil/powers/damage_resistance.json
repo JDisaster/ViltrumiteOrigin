@@ -1,0 +1,437 @@
+{
+    "type": "origins:multiple",
+    "name": "Enhanced Durability",
+    "description": "All Viltrumites have extremely high durability. This, coupled with their regenerative capabilities, makes them extremely difficult to defeat.",
+
+    "damage_res_1": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.4
+        }
+    },
+
+    "damage_res_2": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.1
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 5000
+        }
+    },
+
+    "knockback_res_1": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 5000
+        },
+        "modifier": {
+            "id": "vil:kb_res1",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "damage_res_3": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.1
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 10000
+        }
+    },
+
+    "knockback_res_2": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 10000
+        },
+        "modifier": {
+            "id": "vil:kb_res2",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "damage_res_4": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.05
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 15000
+        }
+    },
+
+    "knockback_res_3": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 15000
+        },
+        "modifier": {
+            "id": "vil:kb_res3",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "damage_res_5": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.05
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 20000
+        }
+    },
+
+    "knockback_res_4": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 20000
+        },
+        "modifier": {
+            "id": "vil:kb_res4",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "damage_res_6": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.05
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 25000
+        }
+    },
+
+    "knockback_res_5": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 25000
+        },
+        "modifier": {
+            "id": "vil:kb_res5",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "damage_res_7": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.05
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 30000
+        }
+    },
+
+    "knockback_res_6": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 30000
+        },
+        "modifier": {
+            "id": "vil:kb_res6",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "damage_res_8": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.05
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 35000
+        }
+    },
+
+    "knockback_res_7": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 35000
+        },
+        "modifier": {
+            "id": "vil:kb_res7",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "damage_res_9": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.025
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 42500
+        }
+    },
+
+    "knockback_res_8": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 42500
+        },
+        "modifier": {
+            "id": "vil:kb_res8",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "damage_res_10": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "id": "vil:damage_res1",
+            "operation": "multiply_base_additive",
+            "amount": -0.025
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 50000
+        }
+    },
+
+    "knockback_res_9": {
+        "type": "origins:conditioned_attribute",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 50000
+        },
+        "modifier": {
+            "id": "vil:kb_res9",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "add_value",
+            "amount": 0.1
+        }
+    },
+
+    "notify_damage_res_2": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_2",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 5000
+        }
+    },
+
+    "notify_damage_res_3": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_3",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 10000
+        }
+    },
+
+    "notify_damage_res_4": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_4",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 15000
+        }
+    },
+
+    "notify_damage_res_5": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_5",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 20000
+        }
+    },
+
+    "notify_damage_res_6": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_6",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 25000
+        }
+    },
+
+    "notify_damage_res_7": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_7",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 30000
+        }
+    },
+
+    "notify_damage_res_8": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_8",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 35000
+        }
+    },
+
+    "notify_damage_res_9": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_9",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 42500
+        }
+    },
+    
+    "notify_damage_res_max": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_lvl_max",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageTaken",
+            "comparison": ">=",
+            "compare_to": 50000
+        }
+    },
+
+    "kb_fix": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage_resistance/damageres_fix_conditioned",
+            "permission_level": 4
+        }
+    }
+}

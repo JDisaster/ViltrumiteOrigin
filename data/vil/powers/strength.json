@@ -1,0 +1,612 @@
+{
+    "type": "origins:multiple",
+    "name": "Enhanced Strength",
+    "description": "Viltrumites possess extreme levels of strength, allowing them to easily obliterate most opponents in combat.",
+
+    "damage_1": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_1",
+            "operation": "multiply_base_additive",
+            "amount": 7
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        }
+    },
+
+    "knockback_1": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:empty"
+            }
+        }
+    },
+
+    "damage_2": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_2",
+            "operation": "multiply_base_additive",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 50000
+            }]
+        }
+    },
+
+    "knockback_2": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 50000
+            }]
+        }
+    },
+
+    "damage_3": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_3",
+            "operation": "multiply_base_additive",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 100000
+            }]
+        }
+    },
+
+    "knockback_3": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 100000
+            }]
+        }
+    },
+
+    "damage_4": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_4",
+            "operation": "multiply_base_additive",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 150000
+            }]
+        }
+    },
+
+    "knockback_4": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 150000
+            }]
+        }
+    },
+
+    "damage_5": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_5",
+            "operation": "multiply_base_additive",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 200000
+            }]
+        }
+    },
+
+    "knockback_5": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 200000
+            }]
+        }
+    },
+
+    "damage_6": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_6",
+            "operation": "multiply_base_additive",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 250000
+            }]
+        }
+    },
+
+    "knockback_6": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 250000
+            }]
+        }
+    },
+
+    "damage_7": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_7",
+            "operation": "multiply_base_additive",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 300000
+            }]
+        }
+    },
+
+    "knockback_7": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 300000
+            }]
+        }
+    },
+
+    "damage_8": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_8",
+            "operation": "multiply_base_additive",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 350000
+            }]
+        }
+    },
+
+    "knockback_8": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 350000
+            }]
+        }
+    },
+
+    "damage_9": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_9",
+            "operation": "multiply_base_additive",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 425000
+            }]
+        }
+    },
+
+    "knockback_9": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 425000
+            }]
+        }
+    },
+
+    "damage_10": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_10",
+            "operation": "multiply_base_additive",
+            "amount": 1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 500000
+            }]
+        }
+    },
+
+    "knockback_10": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            },
+            {
+                "type": "origins:scoreboard",
+                "objective": "vil_damageDealt",
+                "comparison": ">=",
+                "compare_to": 500000
+            }]
+        }
+    },
+
+    "notify_strength_2": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_2",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 50000
+        }
+    },
+
+    "notify_strength_3": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_3",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 100000
+        }
+    },
+
+    "notify_strength_4": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_4",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 150000
+        }
+    },
+
+    "notify_strength_5": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_5",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 200000
+        }
+    },
+
+    "notify_strength_6": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_6",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 250000
+        }
+    },
+
+    "notify_strength_7": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_7",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 300000
+        }
+    },
+
+    "notify_strength_8": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_8",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 350000
+        }
+    },
+
+    "notify_strength_9": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_9",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 425000
+        }
+    },
+
+    "notify_strength_10": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:damage/damage_lvl_max",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "vil_damageDealt",
+            "comparison": ">=",
+            "compare_to": 500000
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10800
+    },
+
+    "train_flight": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:fall_flying"
+            },
+            {
+                "type": "origins:creative_flying"
+            }]
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "origins:action_on_callback",
+    "name": "Enhanced Power Ceiling",
+    "description": "Almost every aspect of Viltrumite physiology can be improved with training. Fly to train flight technique, deal damage to train attack damage and attack speed, take damage to train damage resistance, bathe in lava to increase your fire tolerance, and hold your breath underwater to increase your lung capacity.",
+    "entity_action_respawned": {
+        "type": "origins:and",
+        "actions": [{
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "vil:hold_breath/hold_breath_resources_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "vil:flight/flight_resources_resource"
+        },
+        {
+            "type": "origins:execute_command",
+            "command": "function vil:reset_scoreboards",
+            "permission_level": 4
+        }]
+    }
+}

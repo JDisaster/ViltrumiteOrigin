@@ -1,0 +1,23 @@
+{
+	"powers": [
+		"vil:enhanced_limits",
+		"vil:flight/flight_resources",
+		"vil:flight/flight",
+		"vil:damage_resistance",
+		"vil:strength",
+		"vil:hold_breath/hold_breath_resources",
+		"vil:hold_breath/hold_breath",
+		"vil:efficient_metabolism",
+		"vil:continuous_regen",
+		"vil:no_gear",
+		"vil:sound_weakness",
+		"vil:toggle_item_pickup"
+	],
+	"icon": {
+		"id":"minecraft:iron_sword"
+	},
+	"order": 999,
+	"impact": 3,
+	"name": "Viltrumite",
+	"description": "Viltrumites are super-humanoid beings capable of extreme feats of strength, speed, and power."
+}

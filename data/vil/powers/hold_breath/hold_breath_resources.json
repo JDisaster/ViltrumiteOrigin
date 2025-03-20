@@ -1,0 +1,32 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3600
+    },
+
+    "train_breathing": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:air",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:submerged_in",
+                "fluid": "minecraft:water"
+            }]
+        }
+    }
+}

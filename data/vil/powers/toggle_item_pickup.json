@@ -1,0 +1,21 @@
+{
+    "type": "origins:multiple",
+    "name": "Prevent Item Pickup",
+    "description": "You can toggle a state in which you will not pick up items in order to allow for smooth gameplay when using your fist as your main weapon.",
+
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "id": "key.origins.secondary_active"
+        }
+    },
+
+    "prevent_item_pickup": {
+        "type": "origins:prevent_item_pickup",
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        }
+    }
+}
