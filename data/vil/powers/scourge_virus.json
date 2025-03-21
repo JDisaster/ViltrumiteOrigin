@@ -36,11 +36,21 @@
         "condition": {
             "type": "origins:status_effect",
             "effect": "minecraft:poison"
-        },
+        }
+    },
+
+    "notify_infected": {
+        "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:execute_command",
             "command": "tellraw @s {\"text\":\"You feel your powers fade as the virus spreads...\",\"italic\":true,\"color\":\"gray\"}",
             "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_timer",
+            "comparison": ">",
+            "compare_to": 0
         }
     },
 
@@ -68,280 +78,26 @@
         }
     },
 
-    "custom_poison_damage1": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 5000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 1.6,
-            "damage_type": "minecraft:magic"
+    "clear_on_death": {
+        "type": "origins:action_on_callback",
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "*:*_timer",
+            "operation": "set",
+            "change": 0
         }
     },
 
-    "custom_poison_damage2": {
+    "custom_poison_damage": {
         "type": "origins:action_over_time",
         "interval": 10,
         "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 5000
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 10000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
+            "type": "origins:status_effect",
+            "effect": "minecraft:poison"
         },
         "entity_action": {
             "type": "origins:damage",
-            "amount": 2,
-            "damage_type": "minecraft:magic"
-        }
-    },
-
-    "custom_poison_damage3": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 10000
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 15000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 2.5,
-            "damage_type": "minecraft:magic"
-        }
-    },
-
-    "custom_poison_damage4": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 15000
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 20000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 2.8,
-            "damage_type": "minecraft:magic"
-        }
-    },
-
-    "custom_poison_damage5": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 20000
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 25000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 3.3,
-            "damage_type": "minecraft:magic"
-        }
-    },
-
-    "custom_poison_damage6": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 25000
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 30000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 4,
-            "damage_type": "minecraft:magic"
-        }
-    },
-
-    "custom_poison_damage7": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 30000
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 35000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 5,
-            "damage_type": "minecraft:magic"
-        }
-    },
-
-    "custom_poison_damage8": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 35000
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 42500
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 6.6,
-            "damage_type": "minecraft:magic"
-        }
-    },
-
-    "custom_poison_damage9": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 42500
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 50000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 8,
-            "damage_type": "minecraft:magic"
-        }
-    },
-
-    "custom_poison_damage10": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 50000
-            },
-            {
-                "type": "origins:status_effect",
-                "effect": "minecraft:poison"
-            }]
-        },
-        "entity_action": {
-            "type": "origins:damage",
-            "amount": 10,
+            "amount": 1,
             "damage_type": "minecraft:magic"
         }
     }

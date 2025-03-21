@@ -16,10 +16,19 @@
     "longer_breath_2": {
         "type": "origins:conditioned_attribute",
         "condition": {
-            "type": "origins:resource",
-            "resource": "vil:hold_breath/hold_breath_resources_resource",
-            "comparison": ">=",
-            "compare_to": 1800
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:hold_breath/hold_breath_resources_resource",
+                "comparison": ">=",
+                "compare_to": 1800 
+            }]
         },
         "modifier": {
             "id": "vil:longer_breath2",
@@ -32,10 +41,19 @@
     "longer_breath_3": {
         "type": "origins:conditioned_attribute",
         "condition": {
-            "type": "origins:resource",
-            "resource": "vil:hold_breath/hold_breath_resources_resource",
-            "comparison": ">=",
-            "compare_to": 3600
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:hold_breath/hold_breath_resources_resource",
+                "comparison": ">=",
+                "compare_to": 3600 
+            }]
         },
         "modifier": {
             "id": "vil:longer_breath3",

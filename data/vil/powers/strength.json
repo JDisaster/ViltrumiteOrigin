@@ -3,6 +3,31 @@
     "name": "Enhanced Strength",
     "description": "Viltrumites possess extreme levels of strength, allowing them to easily obliterate most opponents in combat.",
 
+    "damage_while_infected": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "id": "vil:damage_1",
+            "operation": "multiply_base_additive",
+            "amount": 3
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            }]
+        }
+    },
+
     "damage_1": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
@@ -11,11 +36,20 @@
             "amount": 7
         },
         "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "mainhand",
-            "item_condition": {
-                "type": "origins:empty"
-            }
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            }]
         }
     },
 
@@ -26,11 +60,20 @@
             "z": 0.1
         },
         "condition": {
-            "type": "origins:equipped_item",
-            "equipment_slot": "mainhand",
-            "item_condition": {
-                "type": "origins:empty"
-            }
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:empty"
+                }
+            }]
         }
     },
 
@@ -49,6 +92,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -73,6 +122,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -100,6 +155,12 @@
                 }
             },
             {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
@@ -122,6 +183,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -149,6 +216,12 @@
                 }
             },
             {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
@@ -171,6 +244,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -198,6 +277,12 @@
                 }
             },
             {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
@@ -220,6 +305,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -247,6 +338,12 @@
                 }
             },
             {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
@@ -269,6 +366,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -296,6 +399,12 @@
                 }
             },
             {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
@@ -318,6 +427,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -345,6 +460,12 @@
                 }
             },
             {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
@@ -367,6 +488,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -394,6 +521,12 @@
                 }
             },
             {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
@@ -416,6 +549,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",
@@ -443,6 +582,12 @@
                 }
             },
             {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
@@ -465,6 +610,12 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:scoreboard",

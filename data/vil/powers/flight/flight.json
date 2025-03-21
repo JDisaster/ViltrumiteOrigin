@@ -6,27 +6,36 @@
     "creative_flight": {
         "type": "origins:creative_flight",
         "condition": {
-            "type": "origins:block_in_radius",
-            "shape": "sphere",
-            "radius": 20,
-            "block_condition": {
-                "type": "origins:and",
-                "conditions": [{
-                    "type": "origins:block",
-                    "block": "minecraft:sculk_shrieker"
-                },
-                {
-                    "type": "origins:block_state",
-                    "property": "shrieking",
-                    "value": true
-                },
-                {
-                    "type": "origins:block_state",
-                    "property": "waterlogged",
-                    "value": false
-                }]
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
             },
-            "inverted": true
+            {
+                "type": "origins:block_in_radius",
+                "shape": "sphere",
+                "radius": 20,
+                "block_condition": {
+                    "type": "origins:and",
+                    "conditions": [{
+                        "type": "origins:block",
+                        "block": "minecraft:sculk_shrieker"
+                    },
+                    {
+                        "type": "origins:block_state",
+                        "property": "shrieking",
+                        "value": true
+                    },
+                    {
+                        "type": "origins:block_state",
+                        "property": "waterlogged",
+                        "value": false
+                    }]
+                },
+                "inverted": true
+            }]
         }
     },
 
@@ -34,10 +43,19 @@
         "type": "origins:elytra_flight",
         "render_elytra": false,
         "condition": {
-            "type": "origins:resource",
-            "resource": "vil:flight/flight_resources_resource",
-            "comparison": ">=",
-            "compare_to": 3600
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 3600
+            }]
         }
     },
 

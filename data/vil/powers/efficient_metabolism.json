@@ -6,5 +6,11 @@
         "name": "efficient_metabolism",
         "operation": "multiply_total_multiplicative",
         "amount": -0.75
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "vil:scourge_virus_timer",
+        "comparison": "==",
+        "compare_to": 0
     }
 }

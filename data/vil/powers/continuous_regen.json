@@ -13,6 +13,12 @@
         "entity_action": {
             "type": "origins:heal",
             "amount": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vil:scourge_virus_timer",
+            "comparison": "==",
+            "compare_to": 0
         }
     }
 }

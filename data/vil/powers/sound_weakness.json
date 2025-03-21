@@ -189,5 +189,99 @@
             "operation": "multiply_total_multiplicative",
             "amount": -0.5
         }
+    },
+
+    "shrieker_exposure_blur": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 8,
+        "duration_per_stack": 31,
+        "tick_rate": 11,
+        "effect": {
+            "id": "minecraft:nausea",
+            "is_ambient": false,
+            "show_icon": false,
+            "show_particles": false
+        },
+        "condition": {
+            "type": "origins:block_in_radius",
+            "shape": "sphere",
+            "radius": 20,
+            "block_condition": {
+                "type": "origins:and",
+                "conditions": [{
+                    "type": "origins:block",
+                    "block": "minecraft:sculk_shrieker"
+                },
+                {
+                    "type": "origins:block_state",
+                    "property": "shrieking",
+                    "value": true
+                },
+                {
+                    "type": "origins:block_state",
+                    "property": "waterlogged",
+                    "value": false
+                }]
+            }
+        }
+    },
+
+    "shrieker_exposure_shake": {
+        "type": "origins:shaking",
+        "condition": {
+            "type": "origins:block_in_radius",
+            "shape": "sphere",
+            "radius": 20,
+            "block_condition": {
+                "type": "origins:and",
+                "conditions": [{
+                    "type": "origins:block",
+                    "block": "minecraft:sculk_shrieker"
+                },
+                {
+                    "type": "origins:block_state",
+                    "property": "shrieking",
+                    "value": true
+                },
+                {
+                    "type": "origins:block_state",
+                    "property": "waterlogged",
+                    "value": false
+                }]
+            }
+        }
+    },
+
+    "shrieker_exposure_sound": {
+        "type": "origins:action_over_time",
+        "interval": 11,
+        "condition": {
+            "type": "origins:block_in_radius",
+            "shape": "sphere",
+            "radius": 20,
+            "block_condition": {
+                "type": "origins:and",
+                "conditions": [{
+                    "type": "origins:block",
+                    "block": "minecraft:sculk_shrieker"
+                },
+                {
+                    "type": "origins:block_state",
+                    "property": "shrieking",
+                    "value": true
+                },
+                {
+                    "type": "origins:block_state",
+                    "property": "waterlogged",
+                    "value": false
+                }]
+            }
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function vil:sound_damage_effect",
+            "permission_level": 4
+        }
     }
 }

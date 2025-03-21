@@ -9,19 +9,10 @@
         "max": 200,
         "hud_render": {
             "condition": {
-                "type": "origins:or",
-                "conditions": [{
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:lava",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_timer",
-                    "comparison": "<",
-                    "compare_to": 200
-                }]
+                "type": "origins:resource",
+                "resource": "*:*_timer",
+                "comparison": "<",
+                "compare_to": 200
             },
             "should_render": true,
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
@@ -55,20 +46,38 @@
             "change": -1
         },
         "condition": {
-            "type": "origins:fluid_height",
-            "fluid": "minecraft:lava",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:lava",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            }]
         }
     },
 
     "fire_resistance": {
         "type": "origins:fire_immunity",
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_timer",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_timer",
+                "comparison": ">",
+                "compare_to": 0
+            }]
         }
     }
 }
