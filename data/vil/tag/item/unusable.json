@@ -1,9 +1,0 @@
-{
-    "replace": false,
-    "values": [
-        "minecraft:trident",
-        "minecraft:crossbow",
-        "minecraft:bow",
-        "minecraft:shield"
-    ]
-}
