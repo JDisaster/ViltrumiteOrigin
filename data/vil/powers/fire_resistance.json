@@ -1,0 +1,73 @@
+{
+    "type": "origins:multiple",
+    "name": "Fire Resistance",
+    "description": "Viltrumite skin is strong enough to withstand damage from fire, but can only block lava damage for so long.",
+
+    "timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "hud_render": {
+            "condition": {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_timer",
+                    "comparison": "<",
+                    "compare_to": 200
+                }]
+            },
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 15
+        }
+    },
+
+    "regen_timer": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_timer",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+
+    "deplete_timer": {
+        "type": "origins:action_over_time",
+        "interval": 3,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_timer",
+            "change": -1
+        },
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+    "fire_resistance": {
+        "type": "origins:fire_immunity",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_timer",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    }
+}

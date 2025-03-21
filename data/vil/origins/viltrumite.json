@@ -9,11 +9,16 @@
 		"vil:hold_breath/hold_breath",
 		"vil:efficient_metabolism",
 		"vil:continuous_regen",
+		"vil:fire_resistance",
 		"vil:no_gear",
+		"vil:no_equipment/message",
+		"vil:no_equipment/no_tridents",
+		"vil:no_equipment/no_bows",
+		"vil:no_equipment/no_crossbows",
+		"vil:no_equipment/no_shields",
 		"vil:sound_weakness",
 		"vil:toggle_elytra_flight",
-		"vil:toggle_item_pickup",
-		"vil:test"
+		"vil:toggle_item_pickup"
 	],
 	"icon": {
 		"id":"minecraft:iron_sword"

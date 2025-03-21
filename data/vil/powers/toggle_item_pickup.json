@@ -3,11 +3,51 @@
     "name": "Prevent Item Pickup",
     "description": "You can toggle a state in which you will not pick up items in order to allow for smooth gameplay when using your fist as your main weapon. Sneak and use the bind to toggle.",
 
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1
+    },
+
     "toggle": {
-        "type": "origins:toggle",
-        "active_by_default": false,
+        "type": "origins:action_on_key_press",
         "key": {
             "id": "key.origins.secondary_active"
+        },
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [{
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:toggles/toggleoff_pickup",
+                    "permission_level": 4
+                }]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [{
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": -1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:toggles/toggleon_pickup",
+                    "permission_level": 4
+                }]
+            }
         },
         "condition": {
             "type": "origins:sneaking"
@@ -17,22 +57,10 @@
     "prevent_item_pickup": {
         "type": "origins:prevent_item_pickup",
         "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_toggle"
-        }
-    },
-
-    "notify_toggle_changes": {
-        "type": "origins:action_over_time",
-        "rising_action": {
-
-        },
-        "falling_action": {
-
-        },
-        "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_toggle"
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 1
         }
     }
 }
