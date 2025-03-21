@@ -4,17 +4,25 @@
     "description": "Viltrumites can hold their breath for weeks when trained properly, allowing them to travel in space or underwater for long periods at a time.",
 
     "longer_breath_1": {
-        "type": "origins:attribute",
-        "modifier": {
-            "id": "vil:longer_breath1",
-            "attribute": "minecraft:generic.oxygen_bonus",
-            "operation": "add_value",
-            "amount": 4
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+            "type": "origins:gain_air",
+            "value": 25
+        },
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
         }
     },
 
     "longer_breath_2": {
-        "type": "origins:conditioned_attribute",
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+            "type": "origins:gain_air",
+            "value": 2
+        },
         "condition": {
             "type": "origins:and",
             "conditions": [{
@@ -22,6 +30,10 @@
                 "resource": "vil:scourge_virus_timer",
                 "comparison": "==",
                 "compare_to": 0
+            },
+            {
+                "type": "origins:submerged_in",
+                "fluid": "minecraft:water"
             },
             {
                 "type": "origins:resource",
@@ -29,17 +41,16 @@
                 "comparison": ">=",
                 "compare_to": 1800 
             }]
-        },
-        "modifier": {
-            "id": "vil:longer_breath2",
-            "attribute": "minecraft:generic.oxygen_bonus",
-            "operation": "add_value",
-            "amount": 6
         }
     },
 
     "longer_breath_3": {
-        "type": "origins:conditioned_attribute",
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+            "type": "origins:gain_air",
+            "value": 2
+        },
         "condition": {
             "type": "origins:and",
             "conditions": [{
@@ -49,17 +60,15 @@
                 "compare_to": 0
             },
             {
+                "type": "origins:submerged_in",
+                "fluid": "minecraft:water"
+            },
+            {
                 "type": "origins:resource",
                 "resource": "vil:hold_breath/hold_breath_resources_resource",
                 "comparison": ">=",
                 "compare_to": 3600 
             }]
-        },
-        "modifier": {
-            "id": "vil:longer_breath3",
-            "attribute": "minecraft:generic.oxygen_bonus",
-            "operation": "add_value",
-            "amount": 8
         }
     },
 
@@ -90,28 +99,6 @@
             "resource": "vil:hold_breath/hold_breath_resources_resource",
             "comparison": ">=",
             "compare_to": 3600
-        }
-    },
-
-    "breathing_fix": {
-        "type": "origins:action_on_callback",
-        "entity_action_chosen": {
-            "type": "origins:execute_command",
-            "command": "function vil:breathing/breathing_fix_conditioned",
-            "permission_level": 4
-        },
-        "entity_action_respawned": {
-            "type": "origins:and",
-            "actions": [{
-                "type": "origins:revoke_power",
-                "power": "*:*_longer_breath_1",
-                "source": "vil:breathing_fix_ondeath"
-            },
-            {
-                "type": "origins:grant_power",
-                "power": "*:*_longer_breath_1",
-                "source": "vil:breathing_fix_ondeath"
-            }]
         }
     }
 }
