@@ -1,0 +1,41 @@
+{
+    "type": "origins:multiple",
+    "name": "Fortified Immune System",
+    "description": "Viltrumites have extremely advanced immune systems and are immune or resistant to most negative effects.",
+
+    "effect_resistance_duration": {
+        "type": "origins:modify_status_effect_duration",
+        "status_effects": [
+            "minecraft:hunger",
+            "minecraft:wither",
+            "minecraft:mining_fatigue"
+        ],
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "amount": -0.65
+        }
+    },
+
+    "effect_resistance_amplifier": {
+        "type": "origins:modify_status_effect_amplifier",
+        "status_effects": [
+            "minecraft:mining_fatigue",
+            "minecraft:wither"
+        ],
+        "modifier": {
+            "operation": "add_base_early",
+            "amount": -1
+        }
+    },
+
+    "effect_immunity": {
+        "type": "origins:effect_immunity",
+        "effects": [
+            "minecraft:weakness",
+            "minecraft:slowness",
+            "minecraft:nausea",
+            "minecraft:levitation",
+            "minecraft:blindness"
+        ]
+    }
+}

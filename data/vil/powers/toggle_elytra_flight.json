@@ -31,7 +31,7 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "function vil:toggles/toggleon_elytra",
+                    "command": "function vil:toggles/toggleoff_elytra",
                     "permission_level": 4
                 }]
             },
@@ -44,14 +44,23 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "function vil:toggles/toggleoff_elytra",
+                    "command": "function vil:toggles/toggleon_elytra",
                     "permission_level": 4
                 }]
             }
         },
         "condition": {
-            "type": "origins:sneaking",
-            "inverted": true
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 3600
+            },
+            {
+                "type": "origins:sneaking",
+                "inverted": true
+            }]
         }
     },
 
@@ -61,7 +70,7 @@
             "type": "origins:resource",
             "resource": "*:*_resource",
             "comparison": "==",
-            "compare_to": 0
+            "compare_to": 1
         }
     }
 }

@@ -1,7 +1,7 @@
 {
     "type": "origins:multiple",
     "name": "Sonic Vulnerability",
-    "description": "As beings with the natural ability of flight, Viltrumite equilibrium is achieved through an impossibly complex and sensitive process located in their ears. Exposure to certain frequencies, particularly shrieking sculk shriekers or sonic blasts from the Warden, can disturb this process and temporarily block some of their abilities, or kill them if exposure is lengthy enough. In the case of the Warden, a single sonic boom is practically guarenteed to be fatal.",
+    "description": "As beings with the natural ability of flight, Viltrumite equilibrium is achieved through an impossibly complex and sensitive process located in their ears. Exposure to certain frequencies, particularly shrieking sculk shriekers or sonic blasts from the Warden, can disturb this process and temporarily block their ability to fly and cause extreme distress or kill them if exposure is lengthy enough. In the case of the Warden, a single sonic boom is practically guarenteed to be fatal.",
 
     "sonic_boom": {
         "type": "origins:modify_damage_taken",

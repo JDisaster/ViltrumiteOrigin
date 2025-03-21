@@ -10,6 +10,7 @@
 		"vil:efficient_metabolism",
 		"vil:continuous_regen",
 		"vil:fire_resistance",
+		"vil:effect_resilience",
 		"vil:no_gear",
 		"vil:no_equipment/message",
 		"vil:no_equipment/no_tridents",
@@ -17,6 +18,7 @@
 		"vil:no_equipment/no_crossbows",
 		"vil:no_equipment/no_shields",
 		"vil:sound_weakness",
+		"vil:scourge_virus",
 		"vil:toggle_elytra_flight",
 		"vil:toggle_item_pickup"
 	],
