@@ -80,7 +80,7 @@
                 {
                     "type": "origins:damage",
                     "amount": 15,
-                    "damage_type": "minecraft:fly_into_wall"
+                    "damage_type": "minecraft:thrown"
                 }]
             }
         },
@@ -125,7 +125,7 @@
                 {
                     "type": "origins:damage",
                     "amount": 30,
-                    "damage_type": "minecraft:fly_into_wall"
+                    "damage_type": "minecraft:thrown"
                 }]
             }
         },
