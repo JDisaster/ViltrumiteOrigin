@@ -50,6 +50,17 @@
                     "type": "origins:empty"
                 }
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -73,6 +84,17 @@
                 "item_condition": {
                     "type": "origins:empty"
                 }
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -105,6 +127,17 @@
                 "comparison": ">=",
                 "compare_to": 50000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -134,6 +167,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 50000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -166,6 +210,17 @@
                 "comparison": ">=",
                 "compare_to": 100000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -195,6 +250,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 100000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -227,6 +293,17 @@
                 "comparison": ">=",
                 "compare_to": 150000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -256,6 +333,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 150000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -288,6 +376,17 @@
                 "comparison": ">=",
                 "compare_to": 200000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -317,6 +416,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 200000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -349,6 +459,17 @@
                 "comparison": ">=",
                 "compare_to": 250000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -378,6 +499,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 250000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -410,6 +542,17 @@
                 "comparison": ">=",
                 "compare_to": 300000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -439,6 +582,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 300000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -471,6 +625,17 @@
                 "comparison": ">=",
                 "compare_to": 350000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -500,6 +665,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 350000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -532,6 +708,17 @@
                 "comparison": ">=",
                 "compare_to": 425000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -561,6 +748,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 425000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },
@@ -593,6 +791,17 @@
                 "comparison": ">=",
                 "compare_to": 500000
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 
@@ -622,6 +831,17 @@
                 "objective": "vil_damageDealt",
                 "comparison": ">=",
                 "compare_to": 500000
+            }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
             }]
         }
     },

@@ -215,7 +215,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -261,7 +261,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -313,7 +313,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -365,7 +365,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -417,7 +417,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -469,7 +469,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -521,7 +521,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -573,7 +573,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -625,7 +625,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
@@ -677,7 +677,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 4,
+            "power": 6,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
