@@ -7,4 +7,5 @@ tellraw @s {"text":"wearing an elytra and can","color":"white"}
 tellraw @s {"text":"boost while in this state!","color":"white"}
 tellraw @s {"text":"Hint: tap space 3 times while normal flying,","color":"gray"}
 tellraw @s {"text":"then press and hold your sprint key","color":"gray"}
+tellraw @s {"text":"Also, try colliding with an entity while boosting...","color":"gray"}
 tellraw @s {"text":"------------------------","color":"gold"}

@@ -1,0 +1,148 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 5
+    },
+
+    "is_boosting": {
+        "type": "origins:active_self",
+        "cooldown": 1,
+        "key": {
+            "key": "key.sprint",
+            "continuous": true
+        },
+        "entity_action": {
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_cooldown"
+        },
+        "condition": {
+            "type": "origins:fall_flying"
+        }
+    },
+
+    "stomp": {
+        "type": "origins:action_on_land",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:fall_distance",
+                "comparison": ">=",
+                "compare_to": 110
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_cooldown",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 10800
+            }]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:damage",
+                "amount": 20,
+                "damage_type": "minecraft:fly_into_wall"
+            },
+            {
+                "type": "origins:explode",
+                "power": 6,
+                "destruction_type": "destroy",
+                "damage_self": false,
+                "create_fire": false
+            }]
+        }
+    },
+
+    "kinetic_strike1": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 0.75,
+            "shape_type": "collider",
+            "block": false,
+            "fluid_handling": "none",
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [{
+                    "type": "origins:add_velocity",
+                    "z": 3
+                },
+                {
+                    "type": "origins:damage",
+                    "amount": 15,
+                    "damage_type": "minecraft:fly_into_wall"
+                }]
+            }
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:*_cooldown",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": "<",
+                "compare_to": 7200
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 3600
+            }]
+        }
+    },
+
+    "kinetic_strike2": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 0.75,
+            "shape_type": "collider",
+            "block": false,
+            "fluid_handling": "none",
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [{
+                    "type": "origins:add_velocity",
+                    "z": 6
+                },
+                {
+                    "type": "origins:damage",
+                    "amount": 30,
+                    "damage_type": "minecraft:fly_into_wall"
+                }]
+            }
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:*_cooldown",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 7200
+            }]
+        }
+    }
+}
