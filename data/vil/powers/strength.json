@@ -25,6 +25,17 @@
                     "type": "origins:empty"
                 }
             }]
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:type",
+                "damage_type": "player_attack" 
+            },
+            {
+                "type": "origins:projectile",
+                "inverted": true
+            }]
         }
     },
 

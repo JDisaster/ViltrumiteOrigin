@@ -3,6 +3,7 @@
 		"vil:enhanced_limits",
 		"vil:flight/flight_resources",
 		"vil:flight/flight",
+		"vil:flight/is_boosting_powers",
 		"vil:damage_resistance",
 		"vil:strength",
 		"vil:hold_breath/hold_breath_resources",
