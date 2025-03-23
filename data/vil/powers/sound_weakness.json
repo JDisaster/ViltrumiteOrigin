@@ -3,42 +3,74 @@
     "name": "Sonic Vulnerability",
     "description": "As beings with the natural ability of flight, Viltrumite equilibrium is achieved through an impossibly complex and sensitive process located in their ears. Exposure to certain frequencies, particularly shrieking sculk shriekers or sonic blasts from the Warden, can disturb this process and temporarily block their ability to fly and cause extreme distress or kill them if exposure is lengthy enough. In the case of the Warden, a single sonic boom is practically guarenteed to be fatal.",
 
-    "sonic_boom": {
+    "sonic_boom_weakness": {
         "type": "origins:modify_damage_taken",
         "damage_condition": {
-            "type": "origins:name",
-            "name": "sonic_boom"
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:name",
+                "name": "sonic_boom"
+            },
+            {
+                "type": "origins:name",
+                "name": "sonic_boom.player"
+            },
+            {
+                "type": "origins:name",
+                "name": "sonic_boom.item"
+            }]
         },
         "modifier": {
-            "id": "vil:sonic_boom_normal",
+            "id": "vil:sonic_boom_weakness",
             "operation": "multiply_base_additive",
             "amount": 1.5
         }
     },
 
-    "sonic_boom_player": {
-        "type": "origins:modify_damage_taken",
-        "damage_condition": {
-            "type": "origins:name",
-            "name": "sonic_boom.player"
+    "recently_sonic_boomed": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 80
+    },
+
+    "decay_recently_boomed": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_recently_sonic_boomed",
+            "change": -1
         },
-        "modifier": {
-            "id": "vil:sonic_boom_player",
-            "operation": "multiply_base_additive",
-            "amount": 1.5
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_recently_sonic_boomed",
+            "comparison": ">",
+            "compare_to": 0
         }
     },
 
-    "sonic_boom_playeritem": {
-        "type": "origins:modify_damage_taken",
+    "hit_by_sonic_boom": {
+        "type": "origins:self_action_when_hit",
         "damage_condition": {
-            "type": "origins:name",
-            "name": "sonic_boom.item"
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:name",
+                "name": "sonic_boom"
+            },
+            {
+                "type": "origins:name",
+                "name": "sonic_boom.player"
+            },
+            {
+                "type": "origins:name",
+                "name": "sonic_boom.item"
+            }]
         },
-        "modifier": {
-            "id": "vil:sonic_boom_playeritem",
-            "operation": "multiply_base_additive",
-            "amount": 1.5
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_recently_sonic_boomed",
+            "change": 80,
+            "operation": "set"
         }
     },
 
@@ -70,7 +102,7 @@
         "condition": {
             "type": "origins:block_in_radius",
             "shape": "sphere",
-            "radius": 12,
+            "radius": 15,
             "block_condition": {
                 "type": "origins:and",
                 "conditions": [{
@@ -108,30 +140,57 @@
     "shrieker_exposure_noglide": {
         "type": "origins:prevent_elytra_flight",
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_isshrieking_resource",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:*_isshrieking_resource",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_recently_sonic_boomed",
+                "comparison": ">",
+                "compare_to": 0
+            }]
         }
     },
 
     "shrieker_exposure_nosprint": {
         "type": "origins:prevent_sprinting",
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_isshrieking_resource",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:*_isshrieking_resource",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_recently_sonic_boomed",
+                "comparison": ">",
+                "compare_to": 0
+            }]
         }
     },
 
     "shrieker_exposure_nojump": {
         "type": "origins:modify_jump",
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_isshrieking_resource",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:*_isshrieking_resource",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_recently_sonic_boomed",
+                "comparison": ">",
+                "compare_to": 0
+            }]
         },
         "modifier": {
             "id": "vil:shrieker_set_jump_zero",
@@ -143,10 +202,19 @@
     "shrieker_exposure_lessdmgdealt": {
         "type": "origins:modify_damage_dealt",
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_isshrieking_resource",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:*_isshrieking_resource",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_recently_sonic_boomed",
+                "comparison": ">",
+                "compare_to": 0
+            }]
         },
         "modifier": {
             "id": "vil:shrieker_half_damage_dealt",
@@ -168,20 +236,38 @@
             "show_particles": false
         },
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_isshrieking_resource",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:*_isshrieking_resource",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_recently_sonic_boomed",
+                "comparison": ">",
+                "compare_to": 0
+            }]
         }
     },
 
     "shrieker_exposure_shake": {
         "type": "origins:shaking",
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_isshrieking_resource",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:*_isshrieking_resource",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_recently_sonic_boomed",
+                "comparison": ">",
+                "compare_to": 0
+            }]
         }
     },
 
