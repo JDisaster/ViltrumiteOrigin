@@ -73,7 +73,7 @@
         "interval": 1,
         "entity_action": {
             "type": "origins:raycast",
-            "distance": 0.75,
+            "distance": 1,
             "shape_type": "collider",
             "block": false,
             "fluid_handling": "none",
@@ -118,7 +118,7 @@
         "interval": 1,
         "entity_action": {
             "type": "origins:raycast",
-            "distance": 0.75,
+            "distance": 1,
             "shape_type": "collider",
             "block": false,
             "fluid_handling": "none",

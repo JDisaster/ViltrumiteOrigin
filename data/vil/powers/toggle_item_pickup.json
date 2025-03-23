@@ -1,6 +1,6 @@
 {
     "type": "origins:multiple",
-    "name": "Prevent Item Pickup",
+    "name": "Toggleable Item Pickup",
     "description": "You can toggle a state in which you will automatically drop any item that enters your main hand in order to allow for smooth gameplay when using your fist as your main weapon.",
 
     "resource": {

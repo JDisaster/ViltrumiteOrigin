@@ -14,27 +14,16 @@
                 "compare_to": 0
             },
             {
-                "type": "origins:block_in_radius",
-                "shape": "sphere",
-                "radius": 20,
-                "block_condition": {
-                    "type": "origins:and",
-                    "conditions": [{
-                        "type": "origins:block",
-                        "block": "minecraft:sculk_shrieker"
-                    },
-                    {
-                        "type": "origins:block_state",
-                        "property": "shrieking",
-                        "value": true
-                    },
-                    {
-                        "type": "origins:block_state",
-                        "property": "waterlogged",
-                        "value": false
-                    }]
-                },
-                "inverted": true
+                "type": "origins:resource",
+                "resource": "vil:sound_weakness_isshrieking_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:sound_weakness_recently_sonic_boomed",
+                "comparison": "==",
+                "compare_to": 0
             }]
         }
     },
