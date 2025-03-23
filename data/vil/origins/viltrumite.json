@@ -21,6 +21,7 @@
 		"vil:sound_weakness",
 		"vil:scourge_virus",
 		"vil:toggle_elytra_flight",
+		"vil:toggle_explosions",
 		"vil:toggle_item_pickup"
 	],
 	"icon": "minecraft:iron_sword",

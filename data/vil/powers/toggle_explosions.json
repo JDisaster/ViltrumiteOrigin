@@ -1,7 +1,7 @@
 {
     "type": "origins:multiple",
-    "name": "Toggleable Glide Flight",
-    "description": "You can toggle a state in which you will not be able to use your second mode of flight, gliding, in order to allow for smooth gameplay.",
+    "name": "Toggleable Explosions",
+    "description": "You can toggle a state in which you will not be able to cause explosions by rapidly flying into things, in order to allow for smooth gameplay. To toggle, sneak and use the specified bind.",
 
     "resource": {
         "type": "origins:resource",
@@ -31,7 +31,7 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "function vil:toggles/toggleoff_elytra",
+                    "command": "function vil:toggles/toggleoff_explosions",
                     "permission_level": 4
                 }]
             },
@@ -44,7 +44,7 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "function vil:toggles/toggleon_elytra",
+                    "command": "function vil:toggles/toggleon_explosions",
                     "permission_level": 4
                 }]
             }
@@ -55,11 +55,10 @@
                 "type": "origins:resource",
                 "resource": "vil:flight/flight_resources_resource",
                 "comparison": ">=",
-                "compare_to": 3600
+                "compare_to": 10800
             },
             {
-                "type": "origins:sneaking",
-                "inverted": true
+                "type": "origins:sneaking"
             },
             {
                 "type": "origins:resource",
@@ -67,16 +66,6 @@
                 "comparison": "==",
                 "compare_to": 0
             }]
-        }
-    },
-
-    "prevent_elytra_flight": {
-        "type": "origins:prevent_elytra_flight",
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_resource",
-            "comparison": "==",
-            "compare_to": 1
         }
     }
 }
