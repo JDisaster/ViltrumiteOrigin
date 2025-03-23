@@ -285,5 +285,29 @@
             "command": "function vil:sound_damage_effect",
             "permission_level": 4
         }
+    },
+
+    "sound_callback": {
+        "type": "origins:action_on_callback",
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "stopsound @s * block.sculk_shrieker.shriek",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_isshrieking_resource",
+                "operation": "set",
+                "change": 0
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_recently_sonic_boomed",
+                "operation": "set",
+                "change": 0
+            }]
+        }
     }
 }
