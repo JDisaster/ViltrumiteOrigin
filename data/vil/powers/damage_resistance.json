@@ -6,9 +6,9 @@
     "damage_res_while_infected": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res_infected",
-            "operation": "multiply_base_additive",
-            "amount": -0.2
+            "name": "vil:damage_res_infected",
+            "operation": "multiply_base",
+            "value": -0.2
         },
         "condition": {
             "type": "origins:resource",
@@ -21,9 +21,9 @@
     "damage_res_1": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res1",
-            "operation": "multiply_base_additive",
-            "amount": -0.4
+            "name": "vil:damage_res1",
+            "operation": "multiply_base",
+            "value": -0.4
         },
         "condition": {
             "type": "origins:resource",
@@ -36,9 +36,9 @@
     "damage_res_2": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res2",
-            "operation": "multiply_base_additive",
-            "amount": -0.1
+            "name": "vil:damage_res2",
+            "operation": "multiply_base",
+            "value": -0.1
         },
         "condition": {
             "type": "origins:and",
@@ -75,19 +75,19 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res1",
+            "name": "vil:kb_res1",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 
     "damage_res_3": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res3",
-            "operation": "multiply_base_additive",
-            "amount": -0.1
+            "name": "vil:damage_res3",
+            "operation": "multiply_base",
+            "value": -0.1
         },
         "condition": {
             "type": "origins:and",
@@ -124,19 +124,19 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res2",
+            "name": "vil:kb_res2",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 
     "damage_res_4": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res4",
-            "operation": "multiply_base_additive",
-            "amount": -0.05
+            "name": "vil:damage_res4",
+            "operation": "multiply_base",
+            "value": -0.05
         },
         "condition": {
             "type": "origins:and",
@@ -173,19 +173,19 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res3",
+            "name": "vil:kb_res3",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 
     "damage_res_5": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res5",
-            "operation": "multiply_base_additive",
-            "amount": -0.05
+            "name": "vil:damage_res5",
+            "operation": "multiply_base",
+            "value": -0.05
         },
         "condition": {
             "type": "origins:and",
@@ -222,19 +222,19 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res4",
+            "name": "vil:kb_res4",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 
     "damage_res_6": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res6",
-            "operation": "multiply_base_additive",
-            "amount": -0.05
+            "name": "vil:damage_res6",
+            "operation": "multiply_base",
+            "value": -0.05
         },
         "condition": {
             "type": "origins:and",
@@ -271,19 +271,19 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res5",
+            "name": "vil:kb_res5",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 
     "damage_res_7": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res7",
-            "operation": "multiply_base_additive",
-            "amount": -0.05
+            "name": "vil:damage_res7",
+            "operation": "multiply_base",
+            "value": -0.05
         },
         "condition": {
             "type": "origins:and",
@@ -320,19 +320,19 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res6",
+            "name": "vil:kb_res6",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 
     "damage_res_8": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res8",
-            "operation": "multiply_base_additive",
-            "amount": -0.05
+            "name": "vil:damage_res8",
+            "operation": "multiply_base",
+            "value": -0.05
         },
         "condition": {
             "type": "origins:and",
@@ -369,19 +369,19 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res7",
+            "name": "vil:kb_res7",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 
     "damage_res_9": {
         "type": "origins:modify_damage_taken",
         "modifier": {
-            "id": "vil:damage_res9",
-            "operation": "multiply_base_additive",
-            "amount": -0.05
+            "name": "vil:damage_res9",
+            "operation": "multiply_base",
+            "value": -0.05
         },
         "condition": {
             "type": "origins:and",
@@ -418,10 +418,10 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res8",
+            "name": "vil:kb_res8",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 
@@ -465,10 +465,10 @@
             }]
         },
         "modifier": {
-            "id": "vil:kb_res9",
+            "name": "vil:kb_res9",
             "attribute": "minecraft:generic.knockback_resistance",
-            "operation": "add_value",
-            "amount": 0.1
+            "operation": "addition",
+            "value": 0.1
         }
     },
 

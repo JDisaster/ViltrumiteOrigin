@@ -24,9 +24,7 @@
 		"vil:toggle_explosions",
 		"vil:toggle_item_pickup"
 	],
-	"icon": {
-		"id":"minecraft:iron_sword"
-	},
+	"icon": "minecraft:iron_sword",
 	"order": 999,
 	"impact": 3,
 	"name": "Viltrumite",

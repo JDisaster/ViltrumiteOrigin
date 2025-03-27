@@ -55,9 +55,9 @@
     },
 
     "boosted_fall_flight": {
-        "type": "origins:action_on_key_press",
+        "type": "origins:active_self",
         "key": {
-            "id": "key.sprint",
+            "key": "key.sprint",
             "continuous": true
         },
         "cooldown": 1,
@@ -99,9 +99,9 @@
     },
 
     "boosted_fall_flight_initial": {
-        "type": "origins:action_on_key_press",
+        "type": "origins:active_self",
         "key": {
-            "id": "key.sprint"
+            "key": "key.sprint"
         },
         "cooldown": 20,
         "entity_action": {
@@ -139,9 +139,9 @@
     },
 
     "super_boosted_fall_flight": {
-        "type": "origins:action_on_key_press",
+        "type": "origins:active_self",
         "key": {
-            "id": "key.sprint",
+            "key": "key.sprint",
             "continuous": true
         },
         "cooldown": 1,
@@ -177,9 +177,9 @@
     },
 
     "super_boosted_fall_flight_initial": {
-        "type": "origins:action_on_key_press",
+        "type": "origins:active_self",
         "key": {
-            "id": "key.sprint"
+            "key": "key.sprint"
         },
         "cooldown": 20,
         "entity_action": {
