@@ -41,6 +41,12 @@
             },
             {
                 "type": "origins:resource",
+                "resource": "vil:toggle_elytra_flight_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
                 "resource": "vil:flight/flight_resources_resource",
                 "comparison": ">=",
                 "compare_to": 3600

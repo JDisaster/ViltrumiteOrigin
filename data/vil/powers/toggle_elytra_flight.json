@@ -68,15 +68,5 @@
                 "compare_to": 0
             }]
         }
-    },
-
-    "prevent_elytra_flight": {
-        "type": "origins:prevent_elytra_flight",
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_resource",
-            "comparison": "==",
-            "compare_to": 1
-        }
     }
 }
