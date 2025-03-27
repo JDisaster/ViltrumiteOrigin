@@ -39,7 +39,7 @@
 
     "deplete_timer": {
         "type": "origins:action_over_time",
-        "interval": 3,
+        "interval": 2,
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_timer",
