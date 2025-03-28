@@ -133,83 +133,57 @@
         }
     },
 
-    "kinetic_strike1": {
+    "kinetic_strike": {
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:area_of_effect",
-            "radius": 1,
-            "shape": "sphere",
-            "bientity_action": {
-                "type": "origins:and",
-                "actions": [{
-                    "type": "origins:add_velocity",
-                    "z": 3
-                },
-                {
-                    "type": "origins:damage",
-                    "amount": 10,
-                    "damage_type": "minecraft:thrown"
-                }]
-            }
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:resource",
-                "resource": "*:*_cooldown",
-                "comparison": ">",
-                "compare_to": 0
-            },
-            {
+            "type": "origins:if_else",
+            "condition": {
                 "type": "origins:resource",
                 "resource": "vil:flight/flight_resources_resource",
                 "comparison": "<",
                 "compare_to": 7200
             },
-            {
-                "type": "origins:resource",
-                "resource": "vil:flight/flight_resources_resource",
-                "comparison": ">=",
-                "compare_to": 3600
-            }]
-        }
-    },
-
-    "kinetic_strike2": {
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:area_of_effect",
-            "radius": 2,
-            "shape": "sphere",
-            "bientity_action": {
-                "type": "origins:and",
-                "actions": [{
-                    "type": "origins:add_velocity",
-                    "z": 6
-                },
-                {
-                    "type": "origins:damage",
-                    "amount": 20,
-                    "damage_type": "minecraft:thrown"
-                }]
+            "if_action": {
+                "type": "origins:area_of_effect",
+                "radius": 1,
+                "shape": "sphere",
+                "bientity_action": {
+                    "type": "origins:and",
+                    "actions": [{
+                        "type": "origins:add_velocity",
+                        "z": 3
+                    },
+                    {
+                        "type": "origins:damage",
+                        "amount": 10,
+                        "damage_type": "minecraft:thrown"
+                    }]
+                }
+            },
+            "else_action": {
+                "type": "origins:area_of_effect",
+                "radius": 2,
+                "shape": "sphere",
+                "bientity_action": {
+                    "type": "origins:and",
+                    "actions": [{
+                        "type": "origins:add_velocity",
+                        "z": 6
+                    },
+                    {
+                        "type": "origins:damage",
+                        "amount": 20,
+                        "damage_type": "minecraft:thrown"
+                    }]
+                }
             }
         },
         "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:resource",
-                "resource": "*:*_cooldown",
-                "comparison": ">",
-                "compare_to": 0
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:flight/flight_resources_resource",
-                "comparison": ">=",
-                "compare_to": 7200
-            }]
+            "type": "origins:resource",
+            "resource": "*:*_cooldown",
+            "comparison": ">",
+            "compare_to": 0
         }
     }
 }
