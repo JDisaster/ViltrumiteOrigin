@@ -137,25 +137,6 @@
         }
     },
 
-    "shrieker_exposure_noglide": {
-        "type": "origins:prevent_elytra_flight",
-        "condition": {
-            "type": "origins:or",
-            "conditions": [{
-                "type": "origins:resource",
-                "resource": "*:*_isshrieking_resource",
-                "comparison": ">",
-                "compare_to": 0
-            },
-            {
-                "type": "origins:resource",
-                "resource": "*:*_recently_sonic_boomed",
-                "comparison": ">",
-                "compare_to": 0
-            }]
-        }
-    },
-
     "shrieker_exposure_nosprint": {
         "type": "origins:prevent_sprinting",
         "condition": {

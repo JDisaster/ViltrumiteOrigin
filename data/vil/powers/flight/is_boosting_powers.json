@@ -23,8 +23,39 @@
         }
     },
 
+    "reduce_fall_damage": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:name",
+                "name": "flyIntoWall"
+            },
+            {
+                "type": "origins:name",
+                "name": "flyIntoWall.player"
+            }]
+        },
+        "modifier": {
+            "name": "vil:no_fall_dmg",
+            "operation": "multiply_total",
+            "value": -0.9
+        }
+    },
+
     "stomp": {
-        "type": "origins:action_on_land",
+        "type": "origins:self_action_when_hit",
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [{
+                "type": "origins:name",
+                "name": "fall"
+            },
+            {
+                "type": "origins:name",
+                "name": "fall.player"
+            }]
+        },
         "condition": {
             "type": "origins:and",
             "conditions": [{
