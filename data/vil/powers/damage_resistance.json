@@ -14,7 +14,7 @@
             "type": "origins:resource",
             "resource": "vil:scourge_virus_timer",
             "comparison": ">",
-            "compare_to": 0
+            "compare_to": 90
         }
     },
 
@@ -28,8 +28,8 @@
         "condition": {
             "type": "origins:resource",
             "resource": "vil:scourge_virus_timer",
-            "comparison": "==",
-            "compare_to": 0
+            "comparison": "<=",
+            "compare_to": 90
         }
     },
 
@@ -45,8 +45,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 80
             },
             {
                 "type": "origins:scoreboard",
@@ -64,8 +64,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 80
             },
             {
                 "type": "origins:scoreboard",
@@ -94,8 +94,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 70
             },
             {
                 "type": "origins:scoreboard",
@@ -113,8 +113,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 70
             },
             {
                 "type": "origins:scoreboard",
@@ -143,8 +143,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 60
             },
             {
                 "type": "origins:scoreboard",
@@ -162,8 +162,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 60
             },
             {
                 "type": "origins:scoreboard",
@@ -192,8 +192,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 50
             },
             {
                 "type": "origins:scoreboard",
@@ -211,8 +211,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 50
             },
             {
                 "type": "origins:scoreboard",
@@ -241,8 +241,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 40
             },
             {
                 "type": "origins:scoreboard",
@@ -260,8 +260,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 40
             },
             {
                 "type": "origins:scoreboard",
@@ -290,8 +290,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 30
             },
             {
                 "type": "origins:scoreboard",
@@ -309,8 +309,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 30
             },
             {
                 "type": "origins:scoreboard",
@@ -339,8 +339,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 20
             },
             {
                 "type": "origins:scoreboard",
@@ -358,8 +358,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 20
             },
             {
                 "type": "origins:scoreboard",
@@ -388,8 +388,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 10
             },
             {
                 "type": "origins:scoreboard",
@@ -407,8 +407,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<=",
+                "compare_to": 10
             },
             {
                 "type": "origins:scoreboard",

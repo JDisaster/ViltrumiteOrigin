@@ -10,8 +10,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<",
+                "compare_to": 90
             },
             {
                 "type": "origins:resource",
@@ -36,8 +36,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<",
+                "compare_to": 50
             },
             {
                 "type": "origins:resource",
@@ -62,7 +62,16 @@
         },
         "cooldown": 1,
         "condition": {
-            "type": "origins:fall_flying"
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:fall_flying"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            }]
         },
         "entity_action": {
             "type": "origins:if_else",
@@ -116,7 +125,16 @@
         },
         "cooldown": 20,
         "condition": {
-            "type": "origins:fall_flying"
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:fall_flying"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            }]
         },
         "entity_action": {
             "type": "origins:if_else",

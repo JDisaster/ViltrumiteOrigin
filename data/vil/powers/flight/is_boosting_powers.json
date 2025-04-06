@@ -19,7 +19,16 @@
             "power": "*:*_cooldown"
         },
         "condition": {
-            "type": "origins:fall_flying"
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:fall_flying"
+            }]
         }
     },
 

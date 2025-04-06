@@ -77,7 +77,7 @@
     "isshrieking_resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 12
+        "max": 25
     },
 
     "resource_decay": {
@@ -132,7 +132,7 @@
                 "type": "origins:change_resource",
                 "resource": "*:*_isshrieking_resource",
                 "operation": "set",
-                "change": 12
+                "change": 25
             }]
         }
     },
@@ -223,7 +223,7 @@
         }
     },
 
-    "shrieker_exposure_blur": {
+    "shrieker_exposure_nausea": {
         "type": "origins:stacking_status_effect",
         "min_stacks": 0,
         "max_stacks": 8,

@@ -100,5 +100,20 @@
             "amount": 1,
             "damage_type": "minecraft:magic"
         }
+    },
+
+    "time_decay_sleeping": {
+        "type": "origins:action_on_wake_up",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_timer",
+            "change": -90
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_timer",
+            "comparison": ">",
+            "compare_to": 0
+        }
     }
 }
