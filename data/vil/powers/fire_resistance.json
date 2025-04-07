@@ -18,7 +18,7 @@
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
             "bar_index": 15
         },
-        "start_value": 100
+        "start_value": 70
     },
 
     "regen_timer": {

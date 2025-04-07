@@ -11,7 +11,7 @@
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
                 "comparison": "<",
-                "compare_to": 90
+                "compare_to": 40
             },
             {
                 "type": "origins:resource",
@@ -37,7 +37,7 @@
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
                 "comparison": "<",
-                "compare_to": 50
+                "compare_to": 20
             },
             {
                 "type": "origins:resource",
