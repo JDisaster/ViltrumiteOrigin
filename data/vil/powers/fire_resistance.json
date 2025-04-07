@@ -6,19 +6,19 @@
     "timer": {
         "type": "origins:resource",
         "min": 0,
-        "max": 200,
+        "max": 70,
         "hud_render": {
             "condition": {
                 "type": "origins:resource",
                 "resource": "*:*_timer",
                 "comparison": "<",
-                "compare_to": 200
+                "compare_to": 70
             },
             "should_render": true,
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
             "bar_index": 15
         },
-        "start_value": 200
+        "start_value": 70
     },
 
     "regen_timer": {
