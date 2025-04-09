@@ -3,6 +3,54 @@
     "name": "Enhanced Strength",
     "description": "Viltrumites possess extreme levels of strength, allowing them to easily obliterate most opponents in combat.",
 
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 9,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 1,
+            "condition": {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "vil:display_skills_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [{
+                        "type": "origins:resource",
+                        "resource": "vil:display_skills_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_cooldown",
+                        "comparison": ">",
+                        "compare_to": 0
+                    }]
+                }]
+            }
+        }
+    },
+
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 40
+    },
+
+    "detect_attacking": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_cooldown"
+        }
+    },
+
     "damage_while_infected": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
@@ -704,9 +752,17 @@
     "notify_strength_2": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_2",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_2",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -719,9 +775,17 @@
     "notify_strength_3": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_3",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_3",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -734,9 +798,17 @@
     "notify_strength_4": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_4",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_4",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -749,9 +821,17 @@
     "notify_strength_5": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_5",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_5",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -764,9 +844,17 @@
     "notify_strength_6": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_6",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_6",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -779,9 +867,17 @@
     "notify_strength_7": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_7",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_7",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -794,9 +890,17 @@
     "notify_strength_8": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_8",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_8",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -809,9 +913,17 @@
     "notify_strength_9": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_9",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_9",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -824,9 +936,17 @@
     "notify_strength_10": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage/damage_lvl_max",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage/damage_lvl_max",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",

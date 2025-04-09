@@ -48,6 +48,10 @@
                     "permission_level": 4
                 }]
             }
+        },
+        "condition": {
+            "type": "origins:sneaking",
+            "inverted": true
         }
     },
 

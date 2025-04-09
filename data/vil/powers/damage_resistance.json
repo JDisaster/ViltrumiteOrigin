@@ -3,6 +3,54 @@
     "name": "Enhanced Durability",
     "description": "All Viltrumites have extremely high durability. This, coupled with their regenerative capabilities, makes them extremely difficult to defeat.",
 
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 9,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "vil:display_skills_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [{
+                        "type": "origins:resource",
+                        "resource": "vil:display_skills_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_cooldown",
+                        "comparison": ">",
+                        "compare_to": 0
+                    }]
+                }]
+            }
+        }
+    },
+
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 40
+    },
+
+    "detect_attacked": {
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_cooldown"
+        }
+    },
+
     "damage_res_while_infected": {
         "type": "origins:modify_damage_taken",
         "modifier": {
@@ -475,9 +523,17 @@
     "notify_damage_res_2": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_2",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_2",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -490,9 +546,17 @@
     "notify_damage_res_3": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_3",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_3",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -505,9 +569,17 @@
     "notify_damage_res_4": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_4",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_4",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -520,9 +592,17 @@
     "notify_damage_res_5": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_5",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_5",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -535,9 +615,17 @@
     "notify_damage_res_6": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_6",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_6",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -550,9 +638,17 @@
     "notify_damage_res_7": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_7",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_7",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -565,9 +661,17 @@
     "notify_damage_res_8": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_8",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_8",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -580,9 +684,17 @@
     "notify_damage_res_9": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_9",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_9",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -595,9 +707,17 @@
     "notify_damage_res_max": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:damage_resistance/damageres_lvl_max",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:damage_resistance/damageres_lvl_max",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1
+            }]
         },
         "condition": {
             "type": "origins:scoreboard",
