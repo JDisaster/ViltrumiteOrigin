@@ -1,7 +1,7 @@
 {
     "type": "origins:action_on_callback",
     "name": "Enhanced Power Ceiling",
-    "description": "Almost every aspect of Viltrumite physiology can be improved with training. Fly to train flight technique, deal damage to train attack damage and knockback, take damage to train damage resistance, and hold your breath underwater to increase your lung capacity.",
+    "description": "Almost every aspect of Viltrumite physiology can be improved with training. Fly to train flight technique, deal damage to train attack damage and knockback, take damage to train damage resistance, regenerate to improve your healing factor, and hold your breath underwater to increase your lung capacity.",
     "entity_action_respawned": {
         "type": "origins:and",
         "actions": [{
@@ -15,6 +15,36 @@
             "operation": "set",
             "change": 0,
             "resource": "vil:flight/flight_resources_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "vil:healing_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "vil:strength_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 40,
+            "resource": "vil:strength_cooldown"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "vil:damage_resistance_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 40,
+            "resource": "vil:damage_resistance_cooldown"
         },
         {
             "type": "origins:execute_command",
@@ -35,6 +65,36 @@
             "operation": "set",
             "change": 0,
             "resource": "vil:flight/flight_resources_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "vil:healing_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "vil:strength_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 40,
+            "resource": "vil:strength_cooldown"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "vil:damage_resistance_resource"
+        },
+        {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 40,
+            "resource": "vil:damage_resistance_cooldown"
         },
         {
             "type": "origins:execute_command",

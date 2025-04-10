@@ -5,7 +5,39 @@
     "resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 3600
+        "max": 3600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 16,
+            "condition": {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "vil:display_skills_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [{
+                        "type": "origins:resource",
+                        "resource": "vil:display_skills_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:air",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:submerged_in",
+                        "fluid": "minecraft:water"
+                    }]
+                }]
+            }
+        }
     },
 
     "train_breathing": {

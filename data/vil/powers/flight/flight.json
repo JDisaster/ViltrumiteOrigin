@@ -10,8 +10,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<",
+                "compare_to": 40
             },
             {
                 "type": "origins:resource",
@@ -36,8 +36,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<",
+                "compare_to": 20
             },
             {
                 "type": "origins:resource",
@@ -54,30 +54,13 @@
         }
     },
 
-    "boosted_fall_flight": {
+    "fall_flight_boost": {
         "type": "origins:active_self",
         "key": {
             "key": "key.sprint",
             "continuous": true
         },
         "cooldown": 1,
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:submerged_in",
-                "fluid": "minecraft:water"
-            },
-            "if_action": {
-                "type": "origins:add_velocity",
-                "z": 0.2275,
-                "space": "local"
-            },
-            "else_action": {
-                "type": "origins:add_velocity",
-                "z": 0.035,
-                "space": "local"
-            }
-        },
         "condition": {
             "type": "origins:and",
             "conditions": [{
@@ -85,39 +68,62 @@
             },
             {
                 "type": "origins:resource",
-                "resource": "vil:flight/flight_resources_resource",
-                "comparison": ">=",
-                "compare_to": 3600
-            },
-            {
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            }]
+        },
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
                 "type": "origins:resource",
                 "resource": "vil:flight/flight_resources_resource",
                 "comparison": "<",
                 "compare_to": 7200
-            }]
+            },
+            "if_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                },
+                "if_action": {
+                    "type": "origins:add_velocity",
+                    "z": 0.2275,
+                    "space": "local"
+                },
+                "else_action": {
+                    "type": "origins:add_velocity",
+                    "z": 0.035,
+                    "space": "local"
+                }
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                },
+                "if_action": {
+                    "type": "origins:add_velocity",
+                    "z": 0.65,
+                    "space": "local"
+                },
+                "else_action": {
+                    "type": "origins:add_velocity",
+                    "z": 0.1,
+                    "space": "local"
+                }
+            }
         }
     },
 
-    "boosted_fall_flight_initial": {
+    "initial_fall_flight_boost": {
         "type": "origins:active_self",
         "key": {
             "key": "key.sprint"
         },
         "cooldown": 20,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [{
-                "type": "origins:add_velocity",
-                "z": 0.8,
-                "space": "local"
-            },
-            {
-                "type": "origins:play_sound",
-                "sound": "entity.ender_dragon.shoot",
-                "volume": 5,
-                "pitch": 2
-            }]
-        },
         "condition": {
             "type": "origins:and",
             "conditions": [{
@@ -125,88 +131,47 @@
             },
             {
                 "type": "origins:resource",
-                "resource": "vil:flight/flight_resources_resource",
-                "comparison": ">=",
-                "compare_to": 3600
-            },
-            {
+                "resource": "vil:scourge_virus_timer",
+                "comparison": "==",
+                "compare_to": 0
+            }]
+        },
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
                 "type": "origins:resource",
                 "resource": "vil:flight/flight_resources_resource",
                 "comparison": "<",
                 "compare_to": 7200
-            }]
-        }
-    },
-
-    "super_boosted_fall_flight": {
-        "type": "origins:active_self",
-        "key": {
-            "key": "key.sprint",
-            "continuous": true
-        },
-        "cooldown": 1,
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:submerged_in",
-                "fluid": "minecraft:water"
             },
             "if_action": {
-                "type": "origins:add_velocity",
-                "z": 0.65,
-                "space": "local"
+                "type": "origins:and",
+                "actions": [{
+                    "type": "origins:add_velocity",
+                    "z": 1.25,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "entity.ender_dragon.shoot",
+                    "volume": 5,
+                    "pitch": 2
+                }]
             },
             "else_action": {
-                "type": "origins:add_velocity",
-                "z": 0.1,
-                "space": "local"
+                "type": "origins:and",
+                "actions": [{
+                    "type": "origins:add_velocity",
+                    "z": 2.5,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "entity.generic.explode",
+                    "volume": 5,
+                    "pitch": 2
+                }]
             }
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:fall_flying"
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:flight/flight_resources_resource",
-                "comparison": ">=",
-                "compare_to": 7200
-            }]
-        }
-    },
-
-    "super_boosted_fall_flight_initial": {
-        "type": "origins:active_self",
-        "key": {
-            "key": "key.sprint"
-        },
-        "cooldown": 20,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [{
-                "type": "origins:add_velocity",
-                "z": 2,
-                "space": "local"
-            },
-            {
-                "type": "origins:play_sound",
-                "sound": "entity.generic.explode",
-                "volume": 5,
-                "pitch": 2
-            }]
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:fall_flying"
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:flight/flight_resources_resource",
-                "comparison": ">=",
-                "compare_to": 7200
-            }]
         }
     },
 

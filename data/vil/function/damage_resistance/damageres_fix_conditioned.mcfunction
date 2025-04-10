@@ -1,0 +1,9 @@
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res1
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res2
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res3
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res4
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res5
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res6
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res7
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res8
+attribute @s minecraft:generic.knockback_resistance modifier remove vil:kb_res9
