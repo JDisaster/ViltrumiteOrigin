@@ -1,0 +1,87 @@
+{
+    "type": "origins:multiple",
+    "name": "Toggle Skill Display",
+    "description": "You can cycle through 3 states; the first state will display your skill leveling information when you level that skill (for example flying will display your flight progress bar). The second state will display all your skill bars at once. The last state will disable all skill display bars. To cycle, sneak and use the specified bind.",
+
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2
+    },
+
+    "cycle": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:sneaking"
+        },
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [{
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [{
+                        "type": "origins:change_resource",
+                        "resource": "*:*_resource",
+                        "change": 1
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function vil:cycles/show_bars",
+                        "permission_level": 4
+                    }]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [{
+                        "type": "origins:change_resource",
+                        "resource": "*:*_resource",
+                        "change": 1
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function vil:cycles/show_bars_always",
+                        "permission_level": 4
+                    }]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [{
+                        "type": "origins:change_resource",
+                        "resource": "*:*_resource",
+                        "change": -2
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function vil:cycles/no_bars",
+                        "permission_level": 4
+                    }]
+                }
+            }]
+        }
+    }
+}

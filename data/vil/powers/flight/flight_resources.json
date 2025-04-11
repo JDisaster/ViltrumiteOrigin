@@ -5,7 +5,39 @@
     "resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 10800
+        "max": 10800,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 23,
+            "condition": {
+                "type": "origins:or",
+                "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "vil:display_skills_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [{
+                        "type": "origins:resource",
+                        "resource": "vil:display_skills_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:or",
+                        "conditions": [{
+                            "type": "origins:fall_flying"
+                        },
+                        {
+                            "type": "origins:creative_flying"
+                        }]
+                    }]
+                }]
+            }
+        }
     },
 
     "train_flight": {

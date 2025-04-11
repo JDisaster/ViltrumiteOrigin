@@ -22,6 +22,24 @@
         }
     },
 
+    "effect_resistance_amplifier": {
+        "type": "origins:modify_status_effect_amplifier",
+        "status_effects": [
+            "minecraft:mining_fatigue",
+            "minecraft:wither"
+        ],
+        "modifier": {
+            "operation": "addition",
+            "value": -1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vil:scourge_virus_timer",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+
     "effect_immunity": {
         "type": "origins:effect_immunity",
         "effects": [

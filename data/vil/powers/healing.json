@@ -1,0 +1,316 @@
+{
+    "type": "origins:multiple",
+    "name": "Advanced Regeneration",
+    "description": "Viltrumites will slowly recover from any injury that is not instantly fatal, ignoring even hunger levels.",
+    "disable_normal_regen": {
+        "type": "origins:disable_regen"
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 4,
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "vil:display_skills_resource",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "vil:display_skills_resource",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:relative_health",
+                                "comparison": "<",
+                                "compare_to": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "heal_over_time": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_resource",
+                                "comparison": "<",
+                                "compare_to": 720
+                            },
+                            "action": {
+                                "type": "origins:heal",
+                                "amount": 0.1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_resource",
+                                        "comparison": ">=",
+                                        "compare_to": 720
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_resource",
+                                        "comparison": "<",
+                                        "compare_to": 1440
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:heal",
+                                "amount": 0.15
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_resource",
+                                        "comparison": ">=",
+                                        "compare_to": 1440
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_resource",
+                                        "comparison": "<",
+                                        "compare_to": 2160
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:heal",
+                                "amount": 0.19
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_resource",
+                                        "comparison": ">=",
+                                        "compare_to": 2160
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_resource",
+                                        "comparison": "<",
+                                        "compare_to": 2880
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:heal",
+                                "amount": 0.22
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_resource",
+                                        "comparison": ">=",
+                                        "compare_to": 2880
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_resource",
+                                        "comparison": "<",
+                                        "compare_to": 3600
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:heal",
+                                "amount": 0.24
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_resource",
+                                "comparison": ">=",
+                                "compare_to": 3600
+                            },
+                            "action": {
+                                "type": "origins:heal",
+                                "amount": 0.25
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "<",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "notify_healing_2": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:healing/healing_lvl_2",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_healing_2",
+                    "source": "vil:viltrumite"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 720
+        }
+    },
+    "notify_healing_3": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:healing/healing_lvl_3",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_healing_3",
+                    "source": "vil:viltrumite"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 1440
+        }
+    },
+    "notify_healing_4": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:healing/healing_lvl_4",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_healing_4",
+                    "source": "vil:viltrumite"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 2160
+        }
+    },
+    "notify_healing_5": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:healing/healing_lvl_5",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_healing_5",
+                    "source": "vil:viltrumite"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 2880
+        }
+    },
+    "notify_healing_6": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:healing/healing_lvl_max",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_healing_6",
+                    "source": "vil:viltrumite"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 3600
+        }
+    }
+}

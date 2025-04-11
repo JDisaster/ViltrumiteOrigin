@@ -28,8 +28,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
+                "comparison": "<",
+                "compare_to": 50
             },
             {
                 "type": "origins:submerged_in",
@@ -75,9 +75,17 @@
     "notify_breath_2": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:breathing/breathing_lvl_2",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:breathing/breathing_lvl_2",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:revoke_power",
+                "power": "vil:hold_breath/hold_breath_notify_breath_2",
+                "source": "vil:viltrumite"
+            }]
         },
         "condition": {
             "type": "origins:resource",
@@ -90,15 +98,45 @@
     "notify_breath_3": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:breathing/breathing_lvl_max",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:breathing/breathing_lvl_max",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:revoke_power",
+                "power": "vil:hold_breath/hold_breath_notify_breath_3",
+                "source": "vil:viltrumite"
+            }]
         },
         "condition": {
             "type": "origins:resource",
             "resource": "vil:hold_breath/hold_breath_resources_resource",
             "comparison": ">=",
             "compare_to": 3600
+        }
+    },
+
+    "breathing_fix": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "function vil:breathing/breathing_fix_conditioned",
+            "permission_level": 4
+        },
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:revoke_power",
+                "power": "*:*_longer_breath_1",
+                "source": "vil:breathing_fix_ondeath"
+            },
+            {
+                "type": "origins:grant_power",
+                "power": "*:*_longer_breath_1",
+                "source": "vil:breathing_fix_ondeath"
+            }]
         }
     }
 }
