@@ -746,9 +746,17 @@
     "notify_basic_fall_flight": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:flight/flight_lvl_2",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:flight/flight_lvl_2",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:revoke_power",
+                "power": "vil:flight/flight_notify_basic_fall_flight",
+                "source": "vil:viltrumite"
+            }]
         },
         "condition": {
             "type": "origins:resource",
@@ -761,9 +769,17 @@
     "notify_super_fall_flight": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:flight/flight_lvl_3",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:flight/flight_lvl_3",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:revoke_power",
+                "power": "vil:flight/flight_notify_super_fall_flight",
+                "source": "vil:viltrumite"
+            }]
         },
         "condition": {
             "type": "origins:resource",
@@ -776,9 +792,17 @@
     "notify_kinetic_burst": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:execute_command",
-            "command": "function vil:flight/flight_lvl_max",
-            "permission_level": 4
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "command": "function vil:flight/flight_lvl_max",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:revoke_power",
+                "power": "vil:flight/flight_notify_kinetic_burst",
+                "source": "vil:viltrumite"
+            }]
         },
         "condition": {
             "type": "origins:resource",

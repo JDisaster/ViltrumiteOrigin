@@ -69,8 +69,8 @@
             "conditions": [{
                 "type": "origins:resource",
                 "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 90
+                "comparison": "==",
+                "compare_to": 0
             },
             {
                 "type": "origins:resource",

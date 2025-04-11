@@ -2,7 +2,6 @@
     "type": "origins:multiple",
     "name": "Enhanced Strength",
     "description": "Viltrumites possess extreme levels of strength, allowing them to easily obliterate most opponents in combat.",
-
     "resource": {
         "type": "origins:resource",
         "min": 0,
@@ -13,36 +12,38 @@
             "bar_index": 1,
             "condition": {
                 "type": "origins:or",
-                "conditions": [{
-                    "type": "origins:resource",
-                    "resource": "vil:display_skills_resource",
-                    "comparison": "==",
-                    "compare_to": 2
-                },
-                {
-                    "type": "origins:and",
-                    "conditions": [{
+                "conditions": [
+                    {
                         "type": "origins:resource",
                         "resource": "vil:display_skills_resource",
                         "comparison": "==",
-                        "compare_to": 1
+                        "compare_to": 2
                     },
                     {
-                        "type": "origins:resource",
-                        "resource": "*:*_cooldown",
-                        "comparison": ">",
-                        "compare_to": 0
-                    }]
-                }]
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "vil:display_skills_resource",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        ]
+                    }
+                ]
             }
         }
     },
-
     "cooldown": {
         "type": "origins:cooldown",
         "cooldown": 40
     },
-
     "detect_attacking": {
         "type": "origins:self_action_on_hit",
         "entity_action": {
@@ -50,719 +51,781 @@
             "power": "*:*_cooldown"
         }
     },
-
     "damage_while_infected": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_1",
+            "name": "vil:damage_1",
             "operation": "multiply_base",
             "value": 3
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": ">",
-                "compare_to": 90
-            },
-            {
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": ">",
+                    "compare_to": 90
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
                 }
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "knockback": {
         "type": "origins:action_on_hit",
         "bientity_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:if_else_list",
-                "actions": [{
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [{
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": "<",
-                                "compare_to": 100000
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": "<",
+                                            "compare_to": 100000
+                                        },
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": ">=",
+                                            "compare_to": 50000
+                                        }
+                                    ]
+                                }
                             },
-                            {
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": ">=",
-                                "compare_to": 50000
-                            }]
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": "<",
+                                            "compare_to": 150000
+                                        },
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": ">=",
+                                            "compare_to": 100000
+                                        }
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.2
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": "<",
+                                            "compare_to": 200000
+                                        },
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": ">=",
+                                            "compare_to": 150000
+                                        }
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.3
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": "<",
+                                            "compare_to": 250000
+                                        },
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": ">=",
+                                            "compare_to": 200000
+                                        }
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.4
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": "<",
+                                            "compare_to": 300000
+                                        },
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": ">=",
+                                            "compare_to": 250000
+                                        }
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.5
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": "<",
+                                            "compare_to": 350000
+                                        },
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": ">=",
+                                            "compare_to": 300000
+                                        }
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.6
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": "<",
+                                            "compare_to": 425000
+                                        },
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": ">=",
+                                            "compare_to": 350000
+                                        }
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.7
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": "<",
+                                            "compare_to": 500000
+                                        },
+                                        {
+                                            "type": "origins:scoreboard",
+                                            "objective": "vil_damageDealt",
+                                            "comparison": ">=",
+                                            "compare_to": 425000
+                                        }
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.8
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:scoreboard",
+                                    "objective": "vil_damageDealt",
+                                    "comparison": ">=",
+                                    "compare_to": 500000
+                                }
+                            },
+                            "action": {
+                                "type": "origins:add_velocity",
+                                "z": 0.9
+                            }
                         }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.1
-                    }
+                    ]
                 },
                 {
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [{
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": "<",
-                                "compare_to": 150000
-                            },
-                            {
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": ">=",
-                                "compare_to": 100000
-                            }]
-                        }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.2
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [{
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": "<",
-                                "compare_to": 200000
-                            },
-                            {
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": ">=",
-                                "compare_to": 150000
-                            }]
-                        }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.3
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [{
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": "<",
-                                "compare_to": 250000
-                            },
-                            {
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": ">=",
-                                "compare_to": 200000
-                            }]
-                        }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.4
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [{
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": "<",
-                                "compare_to": 300000
-                            },
-                            {
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": ">=",
-                                "compare_to": 250000
-                            }]
-                        }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.5
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [{
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": "<",
-                                "compare_to": 350000
-                            },
-                            {
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": ">=",
-                                "compare_to": 300000
-                            }]
-                        }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.6
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [{
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": "<",
-                                "compare_to": 425000
-                            },
-                            {
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": ">=",
-                                "compare_to": 350000
-                            }]
-                        }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.7
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [{
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": "<",
-                                "compare_to": 500000
-                            },
-                            {
-                                "type": "origins:scoreboard",
-                                "objective": "vil_damageDealt",
-                                "comparison": ">=",
-                                "compare_to": 425000
-                            }]
-                        }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.8
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:scoreboard",
-                            "objective": "vil_damageDealt",
-                            "comparison": ">=",
-                            "compare_to": 500000
-                        }
-                    },
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.9
-                    }
-                }]
-            },
-            {
-                "type": "origins:add_velocity",
-                "z": 0.1
-            }]
+                    "type": "origins:add_velocity",
+                    "z": 0.1
+                }
+            ]
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
-            },
-            {
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
                 }
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_1": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_1",
+            "name": "vil:damage_1",
             "operation": "multiply_base",
             "value": 7
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 90
-            },
-            {
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 90
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
                 }
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_2": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_2",
+            "name": "vil:damage_2",
             "operation": "multiply_base",
             "value": 2
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 80
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 50000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 80
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 50000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_3": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_3",
+            "name": "vil:damage_3",
             "operation": "multiply_base",
             "value": 2
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 70
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 100000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 70
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 100000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_4": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_4",
+            "name": "vil:damage_4",
             "operation": "multiply_base",
             "value": 2
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 60
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 150000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 60
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 150000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_5": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_5",
+            "name": "vil:damage_5",
             "operation": "multiply_base",
             "value": 2
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 50
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 200000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 50
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 200000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_6": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_6",
+            "name": "vil:damage_6",
             "operation": "multiply_base",
             "value": 2
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 40
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 250000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 40
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 250000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_7": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_7",
+            "name": "vil:damage_7",
             "operation": "multiply_base",
             "value": 2
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 30
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 300000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 30
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 300000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_8": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_8",
+            "name": "vil:damage_8",
             "operation": "multiply_base",
             "value": 2
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 350000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 20
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 350000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_9": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_9",
+            "name": "vil:damage_9",
             "operation": "multiply_base",
             "value": 2
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "<=",
+                    "compare_to": 10
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 425000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "<=",
-                "compare_to": 10
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 425000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "damage_10": {
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "id": "vil:damage_10",
+            "name": "vil:damage_10",
             "operation": "multiply_base",
             "value": 1
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageDealt",
+                    "comparison": ">=",
+                    "compare_to": 500000
                 }
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:scourge_virus_timer",
-                "comparison": "==",
-                "compare_to": 0
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageDealt",
-                "comparison": ">=",
-                "compare_to": 500000
-            }]
+            ]
         },
         "damage_condition": {
             "type": "origins:and",
-            "conditions": [{
-                "type": "origins:type",
-                "damage_type": "player_attack" 
-            },
-            {
-                "type": "origins:projectile",
-                "inverted": true
-            }]
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:projectile",
+                    "inverted": true
+                }
+            ]
         }
     },
-
     "notify_strength_2": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_2",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_2",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_2",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -771,21 +834,27 @@
             "compare_to": 50000
         }
     },
-
     "notify_strength_3": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_3",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_3",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_3",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -794,21 +863,27 @@
             "compare_to": 100000
         }
     },
-
     "notify_strength_4": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_4",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_4",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_4",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -817,21 +892,27 @@
             "compare_to": 150000
         }
     },
-
     "notify_strength_5": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_5",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_5",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_5",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -840,21 +921,27 @@
             "compare_to": 200000
         }
     },
-
     "notify_strength_6": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_6",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_6",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_6",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -863,21 +950,27 @@
             "compare_to": 250000
         }
     },
-
     "notify_strength_7": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_7",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_7",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_7",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -886,21 +979,27 @@
             "compare_to": 300000
         }
     },
-
     "notify_strength_8": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_8",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_8",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_8",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -909,21 +1008,27 @@
             "compare_to": 350000
         }
     },
-
     "notify_strength_9": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_9",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_9",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_9",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",
@@ -932,21 +1037,27 @@
             "compare_to": 425000
         }
     },
-
     "notify_strength_10": {
         "type": "origins:action_over_time",
         "rising_action": {
             "type": "origins:and",
-            "actions": [{
-                "type": "origins:execute_command",
-                "command": "function vil:damage/damage_lvl_max",
-                "permission_level": 4
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "*:*_resource",
-                "change": 1
-            }]
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vil:damage/damage_lvl_max",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:revoke_power",
+                    "power": "*:*_notify_strength_10",
+                    "source": "vil:viltrumite"
+                }
+            ]
         },
         "condition": {
             "type": "origins:scoreboard",

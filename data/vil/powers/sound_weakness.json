@@ -21,9 +21,9 @@
             }]
         },
         "modifier": {
-            "id": "vil:sonic_boom_weakness",
-            "operation": "multiply_base_additive",
-            "amount": 1.5
+            "name": "vil:sonic_boom_weakness",
+            "operation": "multiply_base",
+            "value": 1.5
         }
     },
 
@@ -193,9 +193,9 @@
             }]
         },
         "modifier": {
-            "id": "vil:shrieker_set_jump_zero",
-            "operation": "multiply_base_additive",
-            "amount": -1
+            "name": "vil:shrieker_set_jump_zero",
+            "operation": "multiply_base",
+            "value": -1
         }
     },
 
@@ -217,9 +217,9 @@
             }]
         },
         "modifier": {
-            "id": "vil:shrieker_half_damage_dealt",
-            "operation": "multiply_total_multiplicative",
-            "amount": -0.5
+            "name": "vil:shrieker_half_damage_dealt",
+            "operation": "multiply_total",
+            "value": -0.5
         }
     },
 
@@ -230,7 +230,7 @@
         "duration_per_stack": 60,
         "tick_rate": 11,
         "effect": {
-            "id": "minecraft:nausea",
+            "effect": "minecraft:nausea",
             "is_ambient": false,
             "show_icon": false,
             "show_particles": false

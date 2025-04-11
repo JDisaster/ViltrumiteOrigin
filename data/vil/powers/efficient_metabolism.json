@@ -4,8 +4,8 @@
     "description": "Viltrumite metabolism is very efficient, allowing for longer-term energy from lesser quantities of food.",
     "modifier": {
         "name": "efficient_metabolism",
-        "operation": "multiply_total_multiplicative",
-        "amount": -0.75
+        "operation": "multiply_total",
+        "value": -0.75
     },
     "condition": {
         "type": "origins:resource",

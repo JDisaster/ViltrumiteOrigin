@@ -1,7 +1,7 @@
 {
     "type": "origins:multiple",
     "name": "Toggleable Item Pickup",
-    "description": "You can toggle a state in which you will not pick up items in order to allow for smooth gameplay when using your fist as your main weapon.",
+    "description": "You can toggle a state in which you will automatically drop any item that enters your main hand in order to allow for smooth gameplay when using your fist as your main weapon.",
 
     "resource": {
         "type": "origins:resource",
@@ -56,7 +56,12 @@
     },
 
     "prevent_item_pickup": {
-        "type": "origins:prevent_item_pickup",
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:drop_inventory",
+            "slot": "weapon.mainhand"
+        },
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_resource",

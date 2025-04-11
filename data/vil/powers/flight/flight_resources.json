@@ -27,9 +27,6 @@
                         "compare_to": 1
                     },
                     {
-                        "type": "origins:moving"
-                    },
-                    {
                         "type": "origins:or",
                         "conditions": [{
                             "type": "origins:fall_flying"
@@ -52,18 +49,12 @@
             "change": 1
         },
         "condition": {
-            "type": "origins:and",
+            "type": "origins:or",
             "conditions": [{
-                "type": "origins:moving"
+                "type": "origins:fall_flying"
             },
             {
-                "type": "origins:or",
-                "conditions": [{
-                    "type": "origins:fall_flying"
-                },
-                {
-                    "type": "origins:creative_flying"
-                }]
+                "type": "origins:creative_flying"
             }]
         }
     }

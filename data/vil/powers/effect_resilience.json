@@ -11,8 +11,8 @@
             "minecraft:mining_fatigue"
         ],
         "modifier": {
-            "operation": "multiply_total_multiplicative",
-            "amount": -0.65
+            "operation": "multiply_total",
+            "value": -0.65
         },
         "condition": {
             "type": "origins:resource",
@@ -29,8 +29,8 @@
             "minecraft:wither"
         ],
         "modifier": {
-            "operation": "add_base_early",
-            "amount": -1
+            "operation": "addition",
+            "value": -1
         },
         "condition": {
             "type": "origins:resource",
