@@ -490,7 +490,11 @@
     "damage_res_10": {
         "type": "origins:invulnerability",
         "damage_condition": {
-            "type": "origins:projectile"
+            "type": "origins:projectile",
+            "projectile_condition": {
+                "type": "origins:nbt",
+                "nbt": "{PierceLevel:0b}"
+            }
         },
         "condition": {
             "type": "origins:and",
