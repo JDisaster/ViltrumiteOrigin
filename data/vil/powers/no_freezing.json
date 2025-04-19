@@ -1,0 +1,16 @@
+{
+    "name": "Enhanced Homeostasis",
+    "description": "Viltrumite biology is equipped with an advanced form of what humans experience as homeostasis. Because of this, they are able to withstand temperatures below zero with ease.",
+    "type": "origins:invulnerability",
+    "damage_condition": {
+        "type": "origins:or",
+        "conditions": [{
+            "type": "origins:name",
+            "name": "freeze"
+        },
+        {
+            "type": "origins:name",
+            "name": "freeze.player"
+        }]
+    }
+}
