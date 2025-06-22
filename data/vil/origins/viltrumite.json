@@ -20,7 +20,8 @@
 		"vil:display_skills",
 		"vil:toggle_elytra_flight",
 		"vil:toggle_explosions",
-		"vil:toggle_item_pickup"
+		"vil:toggle_item_pickup",
+		"vil:music"
 	],
 	"icon": {
 		"id":"minecraft:iron_sword"

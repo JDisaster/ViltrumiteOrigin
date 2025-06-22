@@ -1,12 +1,12 @@
 {
     "type": "origins:multiple",
     "name": "Toggleable Explosions",
-    "description": "You can toggle a state in which you will not be able to cause explosions by rapidly flying into things, in order to allow for smooth gameplay. To toggle, sneak and use the specified bind.",
+    "description": "You can toggle a state in which you will not be able to cause explosions by rapidly flying into things, in order to allow for smooth gameplay. To toggle, sneak and use the specified bind. A third mode unlocks when reaching hypermax flight level.",
 
     "resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 1
+        "max": 2
     },
 
     "toggle": {
@@ -18,35 +18,110 @@
             "type": "origins:if_else",
             "condition": {
                 "type": "origins:resource",
-                "resource": "*:*_resource",
-                "comparison": "==",
-                "compare_to": 0
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 14400
             },
             "if_action": {
-                "type": "origins:and",
+                "type": "origins:if_else_list",
                 "actions": [{
-                    "type": "origins:change_resource",
-                    "resource": "*:*_resource",
-                    "change": 1
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [{
+                            "type": "origins:change_resource",
+                            "resource": "*:*_resource",
+                            "change": 2
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "function vil:toggles/toggleon_superexplosions",
+                            "permission_level": 4
+                        }]
+                    }
                 },
                 {
-                    "type": "origins:execute_command",
-                    "command": "function vil:toggles/toggleoff_explosions",
-                    "permission_level": 4
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [{
+                            "type": "origins:change_resource",
+                            "resource": "*:*_resource",
+                            "change": -1
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "function vil:toggles/toggleon_explosions",
+                            "permission_level": 4
+                        }]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_resource",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [{
+                            "type": "origins:change_resource",
+                            "resource": "*:*_resource",
+                            "change": -1
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "function vil:toggles/toggleoff_explosions",
+                            "permission_level": 4
+                        }]
+                    }
                 }]
             },
             "else_action": {
-                "type": "origins:and",
-                "actions": [{
-                    "type": "origins:change_resource",
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
                     "resource": "*:*_resource",
-                    "change": -1
+                    "comparison": "==",
+                    "compare_to": 0
                 },
-                {
-                    "type": "origins:execute_command",
-                    "command": "function vil:toggles/toggleon_explosions",
-                    "permission_level": 4
-                }]
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [{
+                        "type": "origins:change_resource",
+                        "resource": "*:*_resource",
+                        "change": 1
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function vil:toggles/toggleoff_explosions",
+                        "permission_level": 4
+                    }]
+                },
+                "else_action": {
+                    "type": "origins:and",
+                    "actions": [{
+                        "type": "origins:change_resource",
+                        "resource": "*:*_resource",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function vil:toggles/toggleon_explosions",
+                        "permission_level": 4
+                    }]
+                }
             }
         },
         "condition": {

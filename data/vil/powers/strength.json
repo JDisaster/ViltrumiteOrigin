@@ -366,7 +366,7 @@
         "modifier": {
             "id": "vil:damage_1",
             "operation": "multiply_base_additive",
-            "amount": 7
+            "amount": 9
         },
         "condition": {
             "type": "origins:and",
@@ -405,7 +405,7 @@
         "modifier": {
             "id": "vil:damage_2",
             "operation": "multiply_base_additive",
-            "amount": 2
+            "amount": 4
         },
         "condition": {
             "type": "origins:and",
@@ -450,7 +450,7 @@
         "modifier": {
             "id": "vil:damage_3",
             "operation": "multiply_base_additive",
-            "amount": 2
+            "amount": 4
         },
         "condition": {
             "type": "origins:and",
@@ -495,7 +495,7 @@
         "modifier": {
             "id": "vil:damage_4",
             "operation": "multiply_base_additive",
-            "amount": 2
+            "amount": 4
         },
         "condition": {
             "type": "origins:and",
@@ -540,7 +540,7 @@
         "modifier": {
             "id": "vil:damage_5",
             "operation": "multiply_base_additive",
-            "amount": 2
+            "amount": 3
         },
         "condition": {
             "type": "origins:and",
@@ -585,7 +585,7 @@
         "modifier": {
             "id": "vil:damage_6",
             "operation": "multiply_base_additive",
-            "amount": 2
+            "amount": 3
         },
         "condition": {
             "type": "origins:and",
@@ -630,7 +630,7 @@
         "modifier": {
             "id": "vil:damage_7",
             "operation": "multiply_base_additive",
-            "amount": 2
+            "amount": 3
         },
         "condition": {
             "type": "origins:and",
@@ -675,7 +675,7 @@
         "modifier": {
             "id": "vil:damage_8",
             "operation": "multiply_base_additive",
-            "amount": 2
+            "amount": 3
         },
         "condition": {
             "type": "origins:and",
@@ -720,7 +720,7 @@
         "modifier": {
             "id": "vil:damage_9",
             "operation": "multiply_base_additive",
-            "amount": 2
+            "amount": 3
         },
         "condition": {
             "type": "origins:and",
@@ -765,7 +765,7 @@
         "modifier": {
             "id": "vil:damage_10",
             "operation": "multiply_base_additive",
-            "amount": 1
+            "amount": 3
         },
         "condition": {
             "type": "origins:and",
