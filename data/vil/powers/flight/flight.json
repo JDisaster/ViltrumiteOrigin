@@ -699,7 +699,7 @@
             "conditions": [{
                 "type": "origins:amount",
                 "comparison": ">=",
-                "compare_to": 2
+                "compare_to": 1
             },
             {
                 "type": "origins:or",
@@ -715,7 +715,7 @@
         },
         "entity_action": {
             "type": "origins:explode",
-            "power": 6,
+            "power": 7,
             "destruction_type": "destroy",
             "damage_self": false,
             "create_fire": false
