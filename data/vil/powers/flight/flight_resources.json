@@ -46,7 +46,7 @@
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_resource",
-            "change": 1
+            "change": 2
         },
         "condition": {
             "type": "origins:or",

@@ -72,10 +72,10 @@
                     },
                     {
                         "type": "origins:explode",
-                        "power": 6,
+                        "power": 7,
                         "destruction_type": "destroy",
                         "damage_self": false,
-                        "create_fire": false
+                        "create_fire": true
                     }]
                 }
             },
@@ -102,7 +102,7 @@
                     },
                     {
                         "type": "origins:explode",
-                        "power": 5,
+                        "power": 6,
                         "destruction_type": "destroy",
                         "damage_self": false,
                         "create_fire": false
@@ -132,7 +132,7 @@
                     },
                     {
                         "type": "origins:explode",
-                        "power": 4,
+                        "power": 5,
                         "destruction_type": "destroy",
                         "damage_self": false,
                         "create_fire": false
@@ -165,7 +165,7 @@
                     },
                     {
                         "type": "origins:damage",
-                        "amount": 10,
+                        "amount": 20,
                         "damage_type": "minecraft:thrown"
                     }]
                 }
@@ -182,7 +182,7 @@
                     },
                     {
                         "type": "origins:damage",
-                        "amount": 20,
+                        "amount": 40,
                         "damage_type": "minecraft:thrown"
                     }]
                 }

@@ -514,6 +514,31 @@
             ]
         }
     },
+    "damage_res_10_2": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "name": "vil:damage_res10_2",
+            "operation": "multiply_base",
+            "value": -0.05
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "vil:scourge_virus_timer",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:scoreboard",
+                    "objective": "vil_damageTaken",
+                    "comparison": ">=",
+                    "compare_to": 50000
+                }
+            ]
+        }
+    },
     "knockback_res_9": {
         "type": "origins:conditioned_attribute",
         "condition": {
