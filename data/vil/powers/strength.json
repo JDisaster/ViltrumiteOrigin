@@ -108,13 +108,13 @@
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": "<",
-                                            "compare_to": 100000
+                                            "compare_to": 50000
                                         },
                                         {
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": ">=",
-                                            "compare_to": 50000
+                                            "compare_to": 25000
                                         }
                                     ]
                                 }
@@ -134,13 +134,13 @@
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": "<",
-                                            "compare_to": 150000
+                                            "compare_to": 75000
                                         },
                                         {
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": ">=",
-                                            "compare_to": 100000
+                                            "compare_to": 50000
                                         }
                                     ]
                                 }
@@ -160,13 +160,13 @@
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": "<",
-                                            "compare_to": 200000
+                                            "compare_to": 100000
                                         },
                                         {
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": ">=",
-                                            "compare_to": 150000
+                                            "compare_to": 75000
                                         }
                                     ]
                                 }
@@ -186,13 +186,13 @@
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": "<",
-                                            "compare_to": 250000
+                                            "compare_to": 125000
                                         },
                                         {
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": ">=",
-                                            "compare_to": 200000
+                                            "compare_to": 100000
                                         }
                                     ]
                                 }
@@ -212,13 +212,13 @@
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": "<",
-                                            "compare_to": 300000
+                                            "compare_to": 150000
                                         },
                                         {
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": ">=",
-                                            "compare_to": 250000
+                                            "compare_to": 125000
                                         }
                                     ]
                                 }
@@ -238,13 +238,13 @@
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": "<",
-                                            "compare_to": 350000
+                                            "compare_to": 175000
                                         },
                                         {
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": ">=",
-                                            "compare_to": 300000
+                                            "compare_to": 150000
                                         }
                                     ]
                                 }
@@ -264,13 +264,13 @@
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": "<",
-                                            "compare_to": 425000
+                                            "compare_to": 212500
                                         },
                                         {
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": ">=",
-                                            "compare_to": 350000
+                                            "compare_to": 175000
                                         }
                                     ]
                                 }
@@ -290,13 +290,13 @@
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": "<",
-                                            "compare_to": 500000
+                                            "compare_to": 250000
                                         },
                                         {
                                             "type": "origins:scoreboard",
                                             "objective": "vil_damageDealt",
                                             "comparison": ">=",
-                                            "compare_to": 425000
+                                            "compare_to": 212500
                                         }
                                     ]
                                 }
@@ -313,7 +313,7 @@
                                     "type": "origins:scoreboard",
                                     "objective": "vil_damageDealt",
                                     "comparison": ">=",
-                                    "compare_to": 500000
+                                    "compare_to": 250000
                                 }
                             },
                             "action": {
@@ -427,7 +427,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 50000
+                    "compare_to": 25000
                 }
             ]
         },
@@ -472,7 +472,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 100000
+                    "compare_to": 50000
                 }
             ]
         },
@@ -517,7 +517,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 150000
+                    "compare_to": 75000
                 }
             ]
         },
@@ -562,7 +562,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 200000
+                    "compare_to": 100000
                 }
             ]
         },
@@ -607,7 +607,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 250000
+                    "compare_to": 125000
                 }
             ]
         },
@@ -652,7 +652,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 300000
+                    "compare_to": 150000
                 }
             ]
         },
@@ -697,7 +697,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 350000
+                    "compare_to": 175000
                 }
             ]
         },
@@ -742,7 +742,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 425000
+                    "compare_to": 212500
                 }
             ]
         },
@@ -787,7 +787,7 @@
                     "type": "origins:scoreboard",
                     "objective": "vil_damageDealt",
                     "comparison": ">=",
-                    "compare_to": 500000
+                    "compare_to": 250000
                 }
             ]
         },
@@ -831,7 +831,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 50000
+            "compare_to": 25000
         }
     },
     "notify_strength_3": {
@@ -860,7 +860,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 100000
+            "compare_to": 50000
         }
     },
     "notify_strength_4": {
@@ -889,7 +889,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 150000
+            "compare_to": 75000
         }
     },
     "notify_strength_5": {
@@ -918,7 +918,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 200000
+            "compare_to": 100000
         }
     },
     "notify_strength_6": {
@@ -947,7 +947,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 250000
+            "compare_to": 125000
         }
     },
     "notify_strength_7": {
@@ -976,7 +976,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 300000
+            "compare_to": 150000
         }
     },
     "notify_strength_8": {
@@ -1005,7 +1005,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 350000
+            "compare_to": 175000
         }
     },
     "notify_strength_9": {
@@ -1034,7 +1034,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 425000
+            "compare_to": 212500
         }
     },
     "notify_strength_10": {
@@ -1063,7 +1063,7 @@
             "type": "origins:scoreboard",
             "objective": "vil_damageDealt",
             "comparison": ">=",
-            "compare_to": 500000
+            "compare_to": 250000
         }
     }
 }
