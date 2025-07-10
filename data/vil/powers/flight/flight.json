@@ -679,66 +679,8 @@
             {
                 "type": "origins:scoreboard",
                 "objective": "vil_damageTaken",
-                "comparison": "<",
-                "compare_to": 50000
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
                 "comparison": ">=",
                 "compare_to": 42500
-            }]
-        }
-    },
-
-    "kinetic_burst10": {
-        "type": "origins:action_when_damage_taken",
-        "cooldown": 20,
-        "damage_condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:amount",
-                "comparison": ">=",
-                "compare_to": 2
-            },
-            {
-                "type": "origins:or",
-                "conditions": [{
-                    "type": "origins:name",
-                    "name": "flyIntoWall"
-                },
-                {
-                    "type": "origins:name",
-                    "name": "flyIntoWall.player"
-                }]
-            }]
-        },
-        "entity_action": {
-            "type": "origins:explode",
-            "power": 6,
-            "destruction_type": "destroy",
-            "damage_self": false,
-            "create_fire": false
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [{
-                "type": "origins:resource",
-                "resource": "vil:flight/flight_resources_resource",
-                "comparison": ">=",
-                "compare_to": 10800
-            },
-            {
-                "type": "origins:resource",
-                "resource": "vil:toggle_explosions_resource",
-                "comparison": "==",
-                "compare_to": 0
-            },
-            {
-                "type": "origins:scoreboard",
-                "objective": "vil_damageTaken",
-                "comparison": ">=",
-                "compare_to": 50000
             }]
         }
     },

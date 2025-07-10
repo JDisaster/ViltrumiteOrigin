@@ -75,7 +75,7 @@
                         "power": 6,
                         "destruction_type": "destroy",
                         "damage_self": false,
-                        "create_fire": false
+                        "create_fire": true
                     }]
                 }
             },
