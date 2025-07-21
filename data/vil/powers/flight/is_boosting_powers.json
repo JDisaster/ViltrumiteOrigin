@@ -194,5 +194,53 @@
             "comparison": ">",
             "compare_to": 0
         }
+    },
+
+    "environment_shred": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                "type": "origins:resource",
+                "resource": "vil:flight/flight_resources_resource",
+                "comparison": ">=",
+                "compare_to": 14400
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:*_cooldown",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "vil:toggle_explosions_resource",
+                "comparison": "==",
+                "compare_to": 2
+            },
+            {
+                "type": "origins:block_in_radius",
+                "radius": 8,
+                "block_condition": {
+                    "type": "origins:in_tag",
+                    "tag": "vil:breakable"
+                }
+            }]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "function vil:shred"
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "entity.generic.explode",
+                "volume": 0.6,
+                "pitch": 0.1
+            }]
+        }
     }
 }
